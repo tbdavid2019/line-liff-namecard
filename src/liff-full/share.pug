@@ -53,7 +53,6 @@ block script
     /** global gtag */
     const loginPromise = (async () => {
       await liff.init({ liffId: '#{liffidFull}' })
-      if (window.getSearchParam('liff.state')) await new Promise(resolve => {}) // 永遠不會結束的 Promise
       if (!liff.isLoggedIn()) {
         liff.login({ redirectUri: location.href })
         await new Promise(resolve => {}) // 永遠不會結束的 Promise
