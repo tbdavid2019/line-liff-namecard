@@ -33,24 +33,18 @@ block content
 
 block script
   script.
-    ;(async () => {
-      // 等待 common.js 載入完成
-      while (typeof window.getCsv !== 'function') {
-        await new Promise(resolve => setTimeout(resolve, 50))
-      }
-      
-      const vm = new Vue({ // eslint-disable-line
-        el: '#app',
-        data: {
-          baseurl: '#{baseurl}',
-          businesscards: [],
-        },
-        async mounted () {
-          try {
-            this.businesscards = await window.getCsv('#{baseurl}businesscards.csv')
-          } catch (err) {
-            await Swal.fire({ icon: 'error', title: '初始化失敗', text: err.message })
-          }
-        },
-      })
-    })()
+    const vm = new Vue({ // eslint-disable-line
+      el: '#app',
+      data: {
+        baseurl: '#{baseurl}',
+        businesscards: [],
+      },
+      async mounted () {
+        try {
+          this.businesscards = await window.getCsv('#{baseurl}businesscards.csv')
+        } catch (err) {
+          console.error(err)
+          await Swal.fire({ icon: 'error', title: '初始化失敗', text: err.message })
+        }
+      },
+    })
