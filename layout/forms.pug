@@ -48,7 +48,7 @@ html
       .row.mx-n2.my-2.d-flex
         button.btn.btn-danger.flex-fill.mx-2.my-1(type="button", @click="btnReset") #[i.fa.mr-2.fa-repeat] 重設表單
         button.btn.btn-info.flex-fill.mx-2.my-1(type="button", @click="btnExport") #[i.fa.mr-2.fa-code] 匯出匯入
-        a.btn.btn-primary.flex-fill.mx-2.my-1(:href="shortcut", target="_blank") #[i.fa.mr-2.fa-id-card-o] 建立名片
+        button.btn.btn-primary.flex-fill.mx-2.my-1(type="button", @click="btnCreateCard", :disabled="!shortcut") #[i.fa.mr-2.fa-id-card-o] 建立名片
       #modal-exportimport.modal.fade(data-backdrop="static", data-keyboard="false", tabindex="-1", ref="modalExportImport")
         .modal-dialog.modal-dialog-centered.modal-xl.align-items-stretch
           .modal-content
@@ -184,6 +184,13 @@ html
           },
           jqModal (ref, action) {
             window.jQuery(this.$refs[ref]).modal(action)
+          },
+          btnCreateCard () {
+            if (!this.shortcut) {
+              Swal.fire({ icon: 'warning', title: '請先填寫表單', text: '請先填寫所有必填欄位後再建立名片' })
+              return
+            }
+            window.open(this.shortcut, '_blank')
           },
         },
       }

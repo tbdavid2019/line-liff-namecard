@@ -48,7 +48,7 @@ pnpm build
 
 ./scripts/deploy-gh-pages.sh
 
-rm -rf .gh-pages-tmp && git worktree prune
+rm -rf .gh-pages-tmp && git worktree prune && ./scripts/deploy-gh-pages.sh
 ```
 
 
