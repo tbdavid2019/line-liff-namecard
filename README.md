@@ -21,6 +21,13 @@ A Bussiness Card For LINE Using LINE Front-end Framework (LIFF) API.
 - `CNAME`：若有自訂網域再填，沒有可留空
 - `LIFFID_SHARE*`：已標示 Deprecated，可留空
 
+## LINE Developers 後台設定注意
+
+在 LINE Developers Console 設定 LIFF 的 Endpoint URL 時，請務必加上 `liff-full/` 子路徑。
+
+*   **`.env` 中的 `BASEURL`**：指向網站根目錄（例如 `https://username.github.io/repo/`），這是為了讓程式能正確讀取根目錄下的資源（如 `businesscards.csv`）。
+*   **LINE 後台的 Endpoint URL**：指向 LIFF 入口頁面（例如 `https://username.github.io/repo/liff-full/`），這是因為 LIFF 的初始化邏輯位於 `liff-full/` 目錄下。若未加上此子路徑，打開 LIFF 時將無法正常運作。
+
 # 本地開發啟動
 
 ```
