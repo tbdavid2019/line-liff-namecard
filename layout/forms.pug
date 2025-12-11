@@ -101,8 +101,8 @@ html
           shortcut () {
             const params = window.httpBuildQuery(_.mapValues(this.vcard, window.encodeBase64url))
             if (!_.isString(params) || !params.length) return
-            // 使用 FULL 尺寸的 LIFF，指向 liff-full/share.html
-            return `https://liff.line.me/#{liffidFull}/liff-full/share.html?${params}`
+            // 使用 FULL 尺寸的 LIFF，指向 share.html（Endpoint URL 已包含 liff-full/）
+            return `https://liff.line.me/#{liffidFull}/share.html?${params}`
           },
         },
         methods: {
