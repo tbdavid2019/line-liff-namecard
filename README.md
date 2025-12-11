@@ -41,6 +41,22 @@ pnpm dev
    * **GitHub Pages**：將 `dist/` 推到 `gh-pages` 分支或用 Actions build 後部署，`BASEURL` 要對應 Pages 網址（含子路徑，如 `https://username.github.io/repo/`）。
 4. 線上環境不需要本機憑證；本地開發預設使用 http://localhost:3000/（若需要 HTTPS 可自行配置反向代理/自簽憑證）。
 
+### 發佈到 GitHub Pages（自動化腳本）
+```
+pnpm install
+pnpm build
+
+./scripts/deploy-gh-pages.sh
+```
+
+
+
+1. 準備 `.env`：至少設定 `BASEURL`（如 `https://username.github.io/repo/`）、`LIFFID_FULL`、`NODE_ENV=production`。
+2. 執行 `scripts/deploy-gh-pages.sh`（需要 pnpm、git 已設定遠端 origin）。腳本會：
+   - 跑 `pnpm install && pnpm build`
+   - 建立/更新 `gh-pages` 分支（git worktree），將 `dist/` 複製過去並推送
+3. 到 GitHub Repo Settings → Pages，來源選 `gh-pages` 分支（root）。
+
 ## Flex 模板在哪、怎麼新增
 
 - Flex Message 範本：`src/cards/*.txt`（文字版），另有 `src/json5/*.json5`（方便編輯的 JSON5 版）。
