@@ -10,7 +10,9 @@ html
     script.
       ;(async () => {
         await liff.init({ liffId: '#{liffidFull}' })
-        const redirect = new URL(location).searchParams.get('redirect')
+        const urlParams = new URL(location).searchParams
+        // 支援 redirect 參數（舊版 LIFF v1）和 liff.state 參數（新版）
+        const redirect = urlParams.get('redirect') || urlParams.get('liff.state')
         if (typeof redirect === 'string') location.href = new URL(redirect, location).href
       })()
 
