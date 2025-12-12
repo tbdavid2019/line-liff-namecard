@@ -49,6 +49,15 @@ block form
     textarea#vcard-url.form-control.form-control-sm(inputmode="url", required, pattern="(https?://|line://|tel:|mailto:)\\S+", v-model="vcard.url", rows="3")
     small.form-text.text-muted 請填寫單位網站。
 
+  hr.my-4
+  h5 獨立分享連結
+  .input-group.my-2
+    input.form-control.form-control-sm(type="text", readonly, :value="shortcut || ''")
+    .input-group-append
+      button.btn.btn-outline-secondary(type="button", @click="btnCopy(shortcut)", :disabled="!shortcut") 複製
+  small.form-text.text-muted(v-if="shortcut") 此連結已包含目前表單資料，分享或收藏後可直接開啟 LIFF 使用。
+  small.form-text.text-muted(v-else) 請先填寫表單讓系統生成您的專屬連結。
+
 block vue-config
   script.
     window.vueConfig.data.vcard = {
