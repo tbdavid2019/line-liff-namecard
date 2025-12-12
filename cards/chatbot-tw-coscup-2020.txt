@@ -142,6 +142,29 @@ function escapeStr (str) {
               "weight": "bold"
             }
           ]
+        },
+        {
+          "borderColor": "#3b9838",
+          "borderWidth": "1px",
+          "cornerRadius": "10px",
+          "layout": "vertical",
+          "paddingAll": "5px",
+          "type": "box",
+          "action": {
+            "label": "Share - 分享",
+            "type": "uri",
+            "uri": "${liffLink}"
+          },
+          "contents": [
+            {
+              "align": "center",
+              "color": "#3b9838",
+              "gravity": "center",
+              "text": "Share - 分享",
+              "type": "text",
+              "weight": "bold"
+            }
+          ]
         }
       ]
     },

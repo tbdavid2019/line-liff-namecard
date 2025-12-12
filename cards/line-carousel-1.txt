@@ -101,7 +101,20 @@ function renderCard (ctx) {
       layout: 'vertical',
       spacing: 'sm',
       type: 'box',
-      contents: _.map(card.btns, btn => renderBtn({ ...ctx, btn })),
+      contents: [
+        ..._.map(card.btns, btn => renderBtn({ ...ctx, btn })),
+        {
+          color: '#0000ff',
+          height: 'sm',
+          style: 'primary',
+          type: 'button',
+          action: {
+            label: 'Share - 分享',
+            type: 'uri',
+            uri: '${liffLink}',
+          },
+        },
+      ],
     },
   }
 }

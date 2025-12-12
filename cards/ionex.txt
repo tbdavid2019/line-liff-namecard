@@ -197,6 +197,23 @@ function renderIonex (vcard) {
             },
           ],
         },
+        footer: {
+          layout: 'vertical',
+          type: 'box',
+          contents: [
+            {
+              action: {
+                label: 'Share - 分享',
+                type: 'uri',
+                uri: '${liffLink}',
+              },
+              color: '#0000ff',
+              height: 'sm',
+              style: 'primary',
+              type: 'button',
+            },
+          ],
+        },
       },
     },
     { type: 'text', text: `這是${vcard.name_tw}的電子名片，名片上有連結可以開啟。` },
