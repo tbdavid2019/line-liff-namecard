@@ -20,7 +20,7 @@ function gaScreenView (vcard) {
 %>
 
 {
-  "altText": "請在手機上查看「${vcard.name_tw}」的名片。",
+  "altText": ${JSON.stringify('請在手機上查看「' + vcard.name_tw + '」的名片。')},
   "type": "flex",
   "contents": {
     "size": "giga",
@@ -60,13 +60,13 @@ function gaScreenView (vcard) {
             {
               "margin": "xl",
               "size": "xxs",
-              "text": "${vcard.title_tw}",
+              "text": ${JSON.stringify(vcard.title_tw)},
               "type": "text",
               "wrap": true
             },
             {
               "size": "lg",
-              "text": "${vcard.name_tw}",
+              "text": ${JSON.stringify(vcard.name_tw)},
               "type": "text",
               "weight": "bold",
               "wrap": true
@@ -74,13 +74,13 @@ function gaScreenView (vcard) {
             {
               "margin": "xl",
               "size": "xxs",
-              "text": "${vcard.title_en}",
+              "text": ${JSON.stringify(vcard.title_en)},
               "type": "text",
               "wrap": true
             },
             {
               "size": "lg",
-              "text": "${vcard.name_en}",
+              "text": ${JSON.stringify(vcard.name_en)},
               "type": "text",
               "weight": "bold",
               "wrap": true
@@ -152,22 +152,22 @@ function gaScreenView (vcard) {
                   "contents": [
                     {
                       "size": "sm",
-                      "text": "+886 ${_.trim(vcard.mobile).slice(1)}",
+                      "text": ${JSON.stringify('+886 ' + _.trim(vcard.mobile).slice(1))},
                       "type": "text",
                       "action": {
                         "label": "action",
                         "type": "uri",
-                        "uri": "tel:${_.trim(vcard.mobile)}"
+                        "uri": ${JSON.stringify('tel:' + _.trim(vcard.mobile))}
                       }
                     },
                     {
                       "size": "sm",
-                      "text": "+886 4 2369 2699 #${_.trim(vcard.ext)}",
+                      "text": ${JSON.stringify('+886 4 2369 2699 #' + _.trim(vcard.ext))},
                       "type": "text",
                       "action": {
                         "label": "action",
                         "type": "uri",
-                        "uri": "tel:04-23692699,${_.trim(vcard.ext)}"
+                        "uri": ${JSON.stringify('tel:04-23692699,' + _.trim(vcard.ext))}
                       }
                     },
                     {
@@ -181,13 +181,13 @@ function gaScreenView (vcard) {
             },
             {
               "margin": "lg",
-              "text": "${_.trim(vcard.email)}",
+              "text": ${JSON.stringify(_.trim(vcard.email))},
               "type": "text",
               "wrap": true,
               "action": {
                 "label": "action",
                 "type": "uri",
-                "uri": "mailto:${_.trim(vcard.email)}"
+                "uri": ${JSON.stringify('mailto:' + _.trim(vcard.email))}
               }
             },
             {
@@ -234,7 +234,7 @@ function gaScreenView (vcard) {
               "aspectRatio": "1:1",
               "size": "full",
               "type": "image",
-              "url": "${gaScreenView(vcard)}"
+              "url": ${JSON.stringify(gaScreenView(vcard))}
             }
           ]
         }
@@ -248,7 +248,7 @@ function gaScreenView (vcard) {
           "action": {
             "label": "Share - 分享",
             "type": "uri",
-            "uri": "${liffLink}"
+            "uri": ${JSON.stringify(liffLink)}
           },
           "color": "#0000ff",
           "height": "sm",

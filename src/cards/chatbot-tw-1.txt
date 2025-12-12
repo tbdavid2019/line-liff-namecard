@@ -109,13 +109,13 @@ function gaScreenView (vcard) {
             "color": "#81C997",
             "margin": "xxl",
             "size": "xxs",
-            "text": "${vcard.title}",
+            "text": ${JSON.stringify(vcard.title)},
             "type": "text"
           },
           {
             "color": "#81C997",
             "size": "xl",
-            "text": "${vcard.name}",
+            "text": ${JSON.stringify(vcard.name)},
             "type": "text",
             "weight": "bold"
           },
@@ -147,7 +147,7 @@ function gaScreenView (vcard) {
             "gravity": "center",
             "size": "full",
             "type": "image",
-            "url": "${gaScreenView(vcard)}"
+            "url": ${JSON.stringify(gaScreenView(vcard))}
           }
         ]
       }
@@ -222,7 +222,7 @@ function gaScreenView (vcard) {
             "action": {
               "label": "Share - 分享",
               "type": "uri",
-              "uri": "${liffLink}"
+              "uri": ${JSON.stringify(liffLink)}
             }
           }
         ]
