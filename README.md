@@ -31,6 +31,8 @@ A Bussiness Card For LINE Using LINE Front-end Framework (LIFF) API.
 # 本地開發啟動
 
 ```
+BASEURL=http://localhost:3000/ pnpm dev
+
 pnpm dev
 ```
 

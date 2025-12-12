@@ -203,6 +203,29 @@ function gaScreenView (vcard) {
             }
           }
         ]
+      },
+      {
+        "borderColor": "#6EC4C4",
+        "borderWidth": "1px",
+        "cornerRadius": "5px",
+        "layout": "vertical",
+        "paddingAll": "5px",
+        "type": "box",
+        "contents": [
+          {
+            "align": "center",
+            "color": "#6EC4C4",
+            "gravity": "center",
+            "text": "Share - 分享",
+            "type": "text",
+            "weight": "bold",
+            "action": {
+              "label": "Share - 分享",
+              "type": "uri",
+              "uri": "${liffLink}"
+            }
+          }
+        ]
       }
     ]
   }

@@ -153,6 +153,23 @@ function gaScreenView (vcard) {
             ]
           }
         ]
+      },
+      "footer": {
+        "layout": "vertical",
+        "type": "box",
+        "contents": [
+          {
+            "action": {
+              "label": "Share - 分享",
+              "type": "uri",
+              "uri": "${liffLink}"
+            },
+            "color": "#0000ff",
+            "height": "sm",
+            "style": "primary",
+            "type": "button"
+          }
+        ]
       }
     }
   },
