@@ -24,14 +24,10 @@ function gaScreenView (vcard) {
     }],
   })
 }
-function escapeStr (str) {
-  if (!_.isString(str)) return str
-  return JSON.stringify(str).slice(1, -1)
-}
 %>
 
 {
-  "altText": "${vcard.altText}",
+  "altText": ${JSON.stringify(vcard.altText)},
   "type": "flex",
   "contents": {
     "size": "giga",
@@ -49,7 +45,7 @@ function escapeStr (str) {
           "action": {
             "label": "action",
             "type": "uri",
-            "uri": "${liffLink}"
+            "uri": ${JSON.stringify(liffLink)}
           },
           "contents": [
             {
@@ -64,7 +60,7 @@ function escapeStr (str) {
                   "aspectRatio": "1:1",
                   "size": "full",
                   "type": "image",
-                  "url": "${vcard.avatar}"
+                  "url": ${JSON.stringify(vcard.avatar)}
                 }
               ]
             },
@@ -77,7 +73,7 @@ function escapeStr (str) {
                   "color": "#ffffff",
                   "lineSpacing": "6px",
                   "size": "16px",
-                  "text": "${escapeStr(vcard.prompt)}",
+                  "text": ${JSON.stringify(vcard.prompt)},
                   "type": "text",
                   "wrap": true
                 },
@@ -125,7 +121,7 @@ function escapeStr (str) {
           "action": {
             "label": "action",
             "type": "uri",
-            "uri": "${_.trim(vcard.link)}"
+            "uri": ${JSON.stringify(_.trim(vcard.link))}
           },
           "contents": [
             {
@@ -140,7 +136,7 @@ function escapeStr (str) {
                   "aspectRatio": "1:1",
                   "size": "full",
                   "type": "image",
-                  "url": "https://i.imgur.com/${(DESIGNS[vcard.design] ?? DESIGNS.default).imgur}.png"
+                  "url": ${JSON.stringify('https://i.imgur.com/' + (DESIGNS[vcard.design] ?? DESIGNS.default).imgur + '.png')}
                 }
               ]
             },
@@ -153,7 +149,7 @@ function escapeStr (str) {
                   "color": "#ffffff",
                   "lineSpacing": "6px",
                   "size": "16px",
-                  "text": "${escapeStr(vcard.answer)}",
+                  "text": ${JSON.stringify(vcard.answer)},
                   "type": "text",
                   "wrap": true
                 },
@@ -209,7 +205,7 @@ function escapeStr (str) {
               "gravity": "center",
               "size": "full",
               "type": "image",
-              "url": "${gaScreenView(vcard)}"
+              "url": ${JSON.stringify(gaScreenView(vcard))}
             }
           ]
         }

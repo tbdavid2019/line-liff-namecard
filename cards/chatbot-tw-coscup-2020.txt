@@ -17,14 +17,10 @@ function gaScreenView (vcard) {
     }],
   })
 }
-function escapeStr (str) {
-  if (!_.isString(str)) return str
-  return JSON.stringify(str).slice(1, -1)
-}
 %>
 
 {
-  "altText": "「${vcard.speaker}」將為我們帶來「${vcard.title}」議程，時間是 ${vcard.time}，地點在 ${vcard.room}，歡迎大家踴躍參加！",
+  "altText": ${JSON.stringify('「' + vcard.speaker + '」將為我們帶來「' + vcard.title + '」議程，時間是 ' + vcard.time + '，地點在 ' + vcard.room + '，歡迎大家踴躍參加！')},
   "type": "flex",
   "contents": {
     "type": "bubble",
@@ -34,7 +30,7 @@ function escapeStr (str) {
       "type": "box",
       "contents": [
         {
-          "text": "${vcard.time}",
+          "text": ${JSON.stringify(vcard.time)},
           "type": "text"
         },
         {
@@ -56,7 +52,7 @@ function escapeStr (str) {
                 {
                   "color": "#ffffff",
                   "size": "xxs",
-                  "text": "${vcard.room}",
+                  "text": ${JSON.stringify(vcard.room)},
                   "type": "text",
                   "weight": "bold"
                 }
@@ -76,7 +72,7 @@ function escapeStr (str) {
                 {
                   "color": "#ffffff",
                   "size": "xxs",
-                  "text": "${vcard.level}",
+                  "text": ${JSON.stringify(vcard.level)},
                   "type": "text",
                   "weight": "bold"
                 }
@@ -86,7 +82,7 @@ function escapeStr (str) {
         },
         {
           "size": "sm",
-          "text": "${escapeStr(vcard.description)}",
+          "text": ${JSON.stringify(vcard.description)},
           "type": "text",
           "wrap": true
         }
@@ -107,7 +103,7 @@ function escapeStr (str) {
           "action": {
             "label": "action",
             "type": "uri",
-            "uri": "${_.trim(vcard.agenda)}"
+            "uri": ${JSON.stringify(_.trim(vcard.agenda))}
           },
           "contents": [
             {
@@ -130,7 +126,7 @@ function escapeStr (str) {
           "action": {
             "label": "action",
             "type": "uri",
-            "uri": "${_.trim(vcard.hackmd)}"
+            "uri": ${JSON.stringify(_.trim(vcard.hackmd))}
           },
           "contents": [
             {
@@ -153,7 +149,7 @@ function escapeStr (str) {
           "action": {
             "label": "Share - 分享",
             "type": "uri",
-            "uri": "${liffLink}"
+            "uri": ${JSON.stringify(liffLink)}
           },
           "contents": [
             {
@@ -191,7 +187,7 @@ function escapeStr (str) {
               "gravity": "center",
               "size": "full",
               "type": "image",
-              "url": "${vcard.avatar}"
+              "url": ${JSON.stringify(vcard.avatar)}
             }
           ]
         },
@@ -221,7 +217,7 @@ function escapeStr (str) {
             {
               "color": "#ffffff",
               "size": "md",
-              "text": "${vcard.title}",
+              "text": ${JSON.stringify(vcard.title)},
               "type": "text",
               "weight": "bold",
               "wrap": true
@@ -229,7 +225,7 @@ function escapeStr (str) {
             {
               "color": "#DBFEB8",
               "size": "xxs",
-              "text": "by  ${vcard.speaker}",
+              "text": ${JSON.stringify('by  ' + vcard.speaker)},
               "type": "text"
             },
             {
@@ -260,7 +256,7 @@ function escapeStr (str) {
               "gravity": "center",
               "size": "full",
               "type": "image",
-              "url": "${gaScreenView(vcard)}"
+              "url": ${JSON.stringify(gaScreenView(vcard))}
             }
           ]
         }

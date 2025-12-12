@@ -68,10 +68,6 @@ const DESIGNS = {
   Winter01: {name:'冬季山茶花卡片',imgur:'c88UxVS',bg:'#00000000',body:'#424B6A',from:'#FFFFFF',to:'#FFFFFF'},
   Winter02: {name:'城市景色卡片',imgur:'SOqnV1u',bg:'#00000000',body:'#7E1B00',from:'#5B0000',to:'#5B0000'},
 }
-function escapeStr (str) {
-  if (!_.isString(str)) return str
-  return JSON.stringify(str).slice(1, -1)
-}
 function gaScreenView (vcard) {
   const TEMPLATE_NAME = '動物森友會卡片-2020/07/17'
   let hash = CryptoJS.HmacMD5(JSON.stringify(vcard), TEMPLATE_NAME)
@@ -110,7 +106,7 @@ function gaScreenView (vcard) {
           "aspectRatio": "1230:780",
           "size": "full",
           "type": "image",
-          "url": "https://i.imgur.com/${DESIGNS[vcard.design].imgur}.png"
+          "url": ${JSON.stringify('https://i.imgur.com/' + DESIGNS[vcard.design].imgur + '.png')}
         },
         {
           "layout": "vertical",
@@ -127,7 +123,7 @@ function gaScreenView (vcard) {
               "type": "box",
               "contents": [
                 {
-                  "backgroundColor": "${DESIGNS[vcard.design].bg}",
+                  "backgroundColor": ${JSON.stringify(DESIGNS[vcard.design].bg)},
                   "cornerRadius": "5px",
                   "flex": 0,
                   "layout": "vertical",
@@ -138,9 +134,9 @@ function gaScreenView (vcard) {
                   "type": "box",
                   "contents": [
                     {
-                      "color": "${DESIGNS[vcard.design].to}",
+                      "color": ${JSON.stringify(DESIGNS[vcard.design].to)},
                       "size": "sm",
-                      "text": "${vcard.to}",
+                      "text": ${JSON.stringify(vcard.to)},
                       "type": "text",
                       "weight": "bold"
                     }
@@ -183,7 +179,7 @@ function gaScreenView (vcard) {
                   ]
                 },
                 {
-                  "backgroundColor": "${DESIGNS[vcard.design].bg}",
+                  "backgroundColor": ${JSON.stringify(DESIGNS[vcard.design].bg)},
                   "cornerRadius": "5px",
                   "flex": 0,
                   "layout": "vertical",
@@ -194,9 +190,9 @@ function gaScreenView (vcard) {
                   "type": "box",
                   "contents": [
                     {
-                      "color": "${DESIGNS[vcard.design].body}",
+                      "color": ${JSON.stringify(DESIGNS[vcard.design].body)},
                       "size": "sm",
-                      "text": "${escapeStr(vcard.body)}",
+                      "text": ${JSON.stringify(vcard.body)},
                       "type": "text",
                       "weight": "bold",
                       "wrap": true
@@ -241,7 +237,7 @@ function gaScreenView (vcard) {
                   ]
                 },
                 {
-                  "backgroundColor": "${DESIGNS[vcard.design].bg}",
+                  "backgroundColor": ${JSON.stringify(DESIGNS[vcard.design].bg)},
                   "cornerRadius": "5px",
                   "flex": 0,
                   "layout": "vertical",
@@ -252,9 +248,9 @@ function gaScreenView (vcard) {
                   "type": "box",
                   "contents": [
                     {
-                      "color": "${DESIGNS[vcard.design].from}",
+                      "color": ${JSON.stringify(DESIGNS[vcard.design].from)},
                       "size": "sm",
-                      "text": "${escapeStr(vcard.from)}",
+                      "text": ${JSON.stringify(vcard.from)},
                       "type": "text",
                       "weight": "bold"
                     }
@@ -280,7 +276,7 @@ function gaScreenView (vcard) {
               "gravity": "center",
               "size": "full",
               "type": "image",
-              "url": "${gaScreenView(vcard)}"
+              "url": ${JSON.stringify(gaScreenView(vcard))}
             }
           ]
         }
@@ -294,7 +290,7 @@ function gaScreenView (vcard) {
           "action": {
             "label": "Share - 分享",
             "type": "uri",
-            "uri": "${liffLink}"
+            "uri": ${JSON.stringify(liffLink)}
           },
           "color": "#0000ff",
           "height": "sm",

@@ -21,7 +21,7 @@ function gaScreenView (vcard) {
 
 [
   {
-    "altText": "請在手機上查看「${vcard.name}」的名片。",
+    "altText": ${JSON.stringify('請在手機上查看「' + vcard.name + '」的名片。')},
     "type": "flex",
     "contents": {
       "size": "giga",
@@ -32,7 +32,7 @@ function gaScreenView (vcard) {
         "type": "box",
         "action": {
           "type": "uri",
-          "uri": "${_.trim(vcard.url)}"
+          "uri": ${JSON.stringify(_.trim(vcard.url))}
         },
         "contents": [
           {
@@ -66,18 +66,18 @@ function gaScreenView (vcard) {
                 "type": "box",
                 "contents": [
                   {
-                    "text": "${vcard.unit}",
+                    "text": ${JSON.stringify(vcard.unit)},
                     "type": "text"
                   },
                   {
-                    "text": "${vcard.title}",
+                    "text": ${JSON.stringify(vcard.title)},
                     "type": "text"
                   },
                   {
                     "align": "end",
                     "margin": "md",
                     "size": "3xl",
-                    "text": "${vcard.name}",
+                    "text": ${JSON.stringify(vcard.name)},
                     "type": "text",
                     "weight": "bold"
                   }
@@ -94,11 +94,11 @@ function gaScreenView (vcard) {
             "contents": [
               {
                 "size": "sm",
-                "text": "${vcard.address}",
+                "text": ${JSON.stringify(vcard.address)},
                 "type": "text",
                 "action": {
                   "type": "uri",
-                  "uri": "${_.trim(vcard.maps)}"
+                  "uri": ${JSON.stringify(_.trim(vcard.maps))}
                 }
               },
               {
@@ -107,27 +107,27 @@ function gaScreenView (vcard) {
                 "contents": [
                   {
                     "size": "sm",
-                    "text": "TEL：${_.trim(vcard.tel)}",
+                    "text": ${JSON.stringify('TEL：' + _.trim(vcard.tel))},
                     "type": "text",
                     "action": {
                       "type": "uri",
-                      "uri": "tel:${_.trim(vcard.tel)}"
+                      "uri": ${JSON.stringify('tel:' + _.trim(vcard.tel))}
                     }
                   },
                   {
                     "size": "sm",
-                    "text": "FAX：${vcard.fax}",
+                    "text": ${JSON.stringify('FAX：' + vcard.fax)},
                     "type": "text"
                   }
                 ]
               },
               {
                 "size": "sm",
-                "text": "Email: ${_.trim(vcard.email)}",
+                "text": ${JSON.stringify('Email: ' + _.trim(vcard.email))},
                 "type": "text",
                 "action": {
                   "type": "uri",
-                  "uri": "mailto:${_.trim(vcard.email)}"
+                  "uri": ${JSON.stringify('mailto:' + _.trim(vcard.email))}
                 }
               }
             ]
@@ -148,7 +148,7 @@ function gaScreenView (vcard) {
                 "gravity": "center",
                 "size": "full",
                 "type": "image",
-                "url": "${gaScreenView(vcard)}"
+                "url": ${JSON.stringify(gaScreenView(vcard))}
               }
             ]
           }
@@ -162,7 +162,7 @@ function gaScreenView (vcard) {
             "action": {
               "label": "Share - 分享",
               "type": "uri",
-              "uri": "${liffLink}"
+              "uri": ${JSON.stringify(liffLink)}
             },
             "color": "#0000ff",
             "height": "sm",

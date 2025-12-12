@@ -20,14 +20,10 @@ function gaScreenView (vcard) {
     }],
   })
 }
-function escapeStr (str) {
-  if (!_.isString(str)) return str
-  return JSON.stringify(str).slice(1, -1)
-}
 %>
 
 {
-  "altText": "${vcard.altText || (vcard.author + '分享了一個連結')}",
+  "altText": ${JSON.stringify(vcard.altText || (vcard.author + '分享了一個連結'))},
   "type": "flex",
   "contents": {
     "size": "giga",
@@ -45,7 +41,7 @@ function escapeStr (str) {
           "action": {
             "label": "action",
             "type": "uri",
-            "uri": "${_.trim(vcard.website)}"
+            "uri": ${JSON.stringify(_.trim(vcard.website))}
           },
           "contents": [
             {
@@ -71,7 +67,7 @@ function escapeStr (str) {
                       "aspectRatio": "1:1",
                       "size": "full",
                       "type": "image",
-                      "url": "${vcard.avatar}"
+                      "url": ${JSON.stringify(vcard.avatar)}
                     }
                   ]
                 }
@@ -88,13 +84,13 @@ function escapeStr (str) {
                     {
                       "flex": 0,
                       "gravity": "center",
-                      "text": "${vcard.author}",
+                      "text": ${JSON.stringify(vcard.author)},
                       "type": "text",
                       "weight": "bold"
                     },
                     {
                       "gravity": "center",
-                      "text": "${vcard.action}",
+                      "text": ${JSON.stringify(vcard.action)},
                       "type": "text"
                     }
                   ]
@@ -111,7 +107,7 @@ function escapeStr (str) {
                 },
                 {
                   "size": "xxs",
-                  "text": "${dayjs().format('M月D日 HH:mm')}",
+                  "text": ${JSON.stringify(dayjs().format('M月D日 HH:mm'))},
                   "type": "text"
                 }
               ]
@@ -124,15 +120,15 @@ function escapeStr (str) {
           "action": {
             "label": "action",
             "type": "uri",
-            "uri": "${_.trim(vcard.link)}"
+            "uri": ${JSON.stringify(_.trim(vcard.link))}
           },
           "contents": [
             {
               "aspectMode": "cover",
-              "aspectRatio": "${vcard.ratio}",
+              "aspectRatio": ${JSON.stringify(vcard.ratio)},
               "size": "full",
               "type": "image",
-              "url": "${vcard.image}"
+              "url": ${JSON.stringify(vcard.image)}
             }
           ]
         },
@@ -144,19 +140,19 @@ function escapeStr (str) {
           "action": {
             "label": "action",
             "type": "uri",
-            "uri": "${_.trim(vcard.link)}"
+            "uri": ${JSON.stringify(_.trim(vcard.link))}
           },
           "contents": [
             {
               "size": "lg",
-              "text": "${vcard.title}",
+              "text": ${JSON.stringify(vcard.title)},
               "type": "text",
               "weight": "bold"
             },
             {
               "maxLines": 3,
               "size": "sm",
-              "text": "${escapeStr(vcard.desc)}",
+              "text": ${JSON.stringify(vcard.desc)},
               "type": "text",
               "wrap": true
             }
@@ -178,7 +174,7 @@ function escapeStr (str) {
               "action": {
                 "label": "action",
                 "type": "uri",
-                "uri": "${liffLink}"
+                "uri": ${JSON.stringify(liffLink)}
               },
               "contents": [
                 {
@@ -233,7 +229,7 @@ function escapeStr (str) {
               "action": {
                 "label": "action",
                 "type": "uri",
-                "uri": "${_.trim(vcard.link)}"
+                "uri": ${JSON.stringify(_.trim(vcard.link))}
               },
               "contents": [
                 {
@@ -297,7 +293,7 @@ function escapeStr (str) {
               "gravity": "center",
               "size": "full",
               "type": "image",
-              "url": "${gaScreenView(vcard)}"
+              "url": ${JSON.stringify(gaScreenView(vcard))}
             }
           ]
         }

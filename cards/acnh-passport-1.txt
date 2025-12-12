@@ -27,7 +27,7 @@ function gaScreenView (vcard) {
 %>
 
 {
-  "altText": "大家好，我是「${vcard.island}」的「${vcard.name}」，好友代碼是 ${vcard.nso}，請加我好友。」",
+  "altText": ${JSON.stringify('大家好，我是「' + vcard.island + '」的「' + vcard.name + '」，好友代碼是 ' + vcard.nso + '，請加我好友。」')},
   "type": "flex",
   "contents": {
     "size": "giga",
@@ -180,7 +180,7 @@ function gaScreenView (vcard) {
                       "gravity": "center",
                       "size": "full",
                       "type": "image",
-                      "url": "${vcard.avator}"
+                      "url": ${JSON.stringify(vcard.avator)}
                     }
                   ]
                 },
@@ -192,7 +192,7 @@ function gaScreenView (vcard) {
                       "flex": 1,
                       "gravity": "center",
                       "size": "lg",
-                      "text": "${vcard.title}",
+                      "text": ${JSON.stringify(vcard.title)},
                       "type": "text",
                       "weight": "bold"
                     },
@@ -213,7 +213,7 @@ function gaScreenView (vcard) {
                       "flex": 1,
                       "gravity": "center",
                       "size": "3xl",
-                      "text": "${vcard.name}",
+                      "text": ${JSON.stringify(vcard.name)},
                       "type": "text",
                       "weight": "bold"
                     },
@@ -264,7 +264,7 @@ function gaScreenView (vcard) {
                     },
                     {
                       "gravity": "center",
-                      "text": "${vcard.island}",
+                      "text": ${JSON.stringify(vcard.island)},
                       "type": "text"
                     }
                   ]
@@ -288,13 +288,13 @@ function gaScreenView (vcard) {
                           "gravity": "center",
                           "size": "full",
                           "type": "image",
-                          "url": "https://acnhcdn.com/latest/MenuIcon/${vcard.fruit}.png"
+                          "url": ${JSON.stringify('https://acnhcdn.com/latest/MenuIcon/' + vcard.fruit + '.png')}
                         }
                       ]
                     },
                     {
                       "gravity": "center",
-                      "text": "${FRUIT_NAME[vcard.fruit]}",
+                      "text": ${JSON.stringify(FRUIT_NAME[vcard.fruit])},
                       "type": "text"
                     }
                   ]
@@ -345,7 +345,7 @@ function gaScreenView (vcard) {
                     },
                     {
                       "gravity": "center",
-                      "text": "${vcard.nso}",
+                      "text": ${JSON.stringify(vcard.nso)},
                       "type": "text"
                     }
                   ]
@@ -382,7 +382,7 @@ function gaScreenView (vcard) {
                   "gravity": "center",
                   "size": "full",
                   "type": "image",
-                  "url": "${gaScreenView(vcard)}"
+                  "url": ${JSON.stringify(gaScreenView(vcard))}
                 }
               ]
             }
@@ -398,7 +398,7 @@ function gaScreenView (vcard) {
           "action": {
             "label": "Share - 分享",
             "type": "uri",
-            "uri": "${liffLink}"
+            "uri": ${JSON.stringify(liffLink)}
           },
           "color": "#0000ff",
           "height": "sm",
