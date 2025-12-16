@@ -15,3 +15,5 @@ forms/announcer-staff.html,名單樣板 (Staff List),louis70109/Announcer,zh_TW,
 forms/announcer-card.html,卡片樣板 (Card),louis70109/Announcer,zh_TW,https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png,展示個人或商品卡片，包含圓形頭像、背景圖與按鈕。
 forms/announcer-news.html,新聞樣板 (News),louis70109/Announcer,zh_TW,https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png,類似新聞的圖文排版，適合分享文章或最新消息。
 forms/ticket-movie.html,票券樣板 (Ticket),LINE Official,zh_TW,https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_3_movie.png,模擬電影票券或活動入場券，包含 QR Code 區塊。
+forms/official-receipt-1.html,LINE 官方收據樣板 (Receipt),LINE Official,zh_TW,https://raw.githubusercontent.com/jcyh0120/linebot-flex-message-template/master/official/Receipt.png,官方收據風格的 Flex Message。
+forms/official-transit-1.html,LINE 官方交通路線樣板 (Transit),LINE Official,zh_TW,https://raw.githubusercontent.com/jcyh0120/linebot-flex-message-template/master/official/Transit.png,官方交通路線風格的 Flex Message。
