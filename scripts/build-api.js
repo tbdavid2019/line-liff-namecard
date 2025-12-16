@@ -175,7 +175,11 @@ async function buildApi() {
     debug(`Generated: list.json with ${templates.length} items`)
 }
 
-buildApi().catch(err => {
-    console.error(err)
-    process.exit(1)
-})
+if (require.main === module) {
+    buildApi().catch(err => {
+        console.error(err)
+        process.exit(1)
+    })
+} else {
+    module.exports = buildApi
+}
