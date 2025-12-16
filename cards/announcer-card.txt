@@ -63,7 +63,7 @@
               "type": "button",
               "action": {
                 "type": "uri",
-                "label": "Share",
+                "label": "SHARE | 分享",
                 "uri": ${JSON.stringify(liffLink)}
               },
               "style": "link",

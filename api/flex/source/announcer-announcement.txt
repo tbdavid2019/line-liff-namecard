@@ -114,7 +114,7 @@ function gaScreenView (vcard) {
           "height": "sm",
           "action": {
             "type": "uri",
-            "label": "SHARE",
+            "label": "SHARE | 分享",
             "uri": ${JSON.stringify(liffLink)}
           }
         },

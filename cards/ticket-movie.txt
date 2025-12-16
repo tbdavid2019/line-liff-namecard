@@ -163,5 +163,23 @@
         ]
       }
     ]
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "sm",
+    "contents": [
+      {
+        "type": "button",
+        "style": "link",
+        "height": "sm",
+        "action": {
+          "type": "uri",
+          "label": "SHARE | 分享",
+          "uri": ${JSON.stringify(liffLink)}
+        }
+      }
+    ],
+    "flex": 0
   }
 }

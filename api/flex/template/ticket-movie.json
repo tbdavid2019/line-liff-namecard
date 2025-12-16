@@ -163,5 +163,23 @@
         ]
       }
     ]
+  },
+  "footer": {
+    "type": "box",
+    "layout": "vertical",
+    "spacing": "sm",
+    "contents": [
+      {
+        "type": "button",
+        "style": "link",
+        "height": "sm",
+        "action": {
+          "type": "uri",
+          "label": "SHARE | 分享",
+          "uri": "https://liff.line.me/mock-liff-id/share.html"
+        }
+      }
+    ],
+    "flex": 0
   }
 }
