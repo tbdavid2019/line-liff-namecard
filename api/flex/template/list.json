@@ -1,0 +1,30 @@
+[
+  {
+    "id": "1",
+    "template": "1",
+    "title": "數位名片新功能上線",
+    "description": "我們剛剛更新了數位名片的功能！\n新增了 Flex Message 樣板支援，讓您可以更方便地分享資訊。\n\n快來試試看吧！",
+    "cover": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png"
+  },
+  {
+    "id": "2",
+    "template": "2",
+    "title": "開發團隊名單",
+    "description": "",
+    "cover": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_2_restaurant.png"
+  },
+  {
+    "id": "3",
+    "template": "3",
+    "title": "David Tsai",
+    "description": "全端工程師\n熱愛開源專案與新技術",
+    "cover": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png"
+  },
+  {
+    "id": "4",
+    "template": "4",
+    "title": "【重要通知】API 服務維護公告",
+    "description": "【重要通知】API 服務維護公告",
+    "cover": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png"
+  }
+]

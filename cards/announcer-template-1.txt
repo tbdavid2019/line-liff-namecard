@@ -1,0 +1,129 @@
+<%
+// GA Tracking helper (optional, based on psprint reference)
+function gaScreenView (vcard) {
+  const TEMPLATE_NAME = 'Announcer-Template-1'
+  return 'https://www.google-analytics.com/collect?v=1&...' // Simplified or removed if not needed, but keeping structure valid
+}
+%>
+{
+  "type": "flex",
+  "altText": ${JSON.stringify(vcard.title || 'Announcement')},
+  "contents": {
+    "type": "bubble",
+    "hero": {
+      "type": "image",
+      "url": ${JSON.stringify(vcard.imageUrl)},
+      "size": "full",
+      "aspectRatio": "20:13",
+      "aspectMode": "cover",
+      "action": {
+        "type": "uri",
+        "uri": ${JSON.stringify(vcard.url)}
+      }
+    },
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": ${JSON.stringify(vcard.title)},
+          "weight": "bold",
+          "size": "xl"
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "margin": "lg",
+          "spacing": "sm",
+          "contents": [
+            {
+              "type": "box",
+              "layout": "baseline",
+              "spacing": "sm",
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "Place",
+                  "color": "#aaaaaa",
+                  "size": "sm",
+                  "flex": 1
+                },
+                {
+                  "type": "text",
+                  "text": ${JSON.stringify(vcard.place)},
+                  "wrap": true,
+                  "color": "#666666",
+                  "size": "sm",
+                  "flex": 5
+                }
+              ]
+            },
+            {
+              "type": "box",
+              "layout": "baseline",
+              "spacing": "sm",
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "Time",
+                  "color": "#aaaaaa",
+                  "size": "sm",
+                  "flex": 1
+                },
+                {
+                  "type": "text",
+                  "text": ${JSON.stringify(vcard.time)},
+                  "wrap": true,
+                  "color": "#666666",
+                  "size": "sm",
+                  "flex": 5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "text": ${JSON.stringify(vcard.description)},
+          "wrap": true,
+          "color": "#666666",
+          "size": "sm",
+          "margin": "md"
+        }
+      ]
+    },
+    "footer": {
+      "type": "box",
+      "layout": "vertical",
+      "spacing": "sm",
+      "contents": [
+        {
+          "type": "button",
+          "style": "link",
+          "height": "sm",
+          "action": {
+            "type": "uri",
+            "label": "WEBSITE",
+            "uri": ${JSON.stringify(vcard.url)}
+          }
+        },
+        {
+          "type": "button",
+          "style": "link",
+          "height": "sm",
+          "action": {
+            "type": "uri",
+            "label": "SHARE",
+            "uri": ${JSON.stringify(liffLink)}
+          }
+        },
+        {
+          "type": "spacer",
+          "size": "sm"
+        }
+      ],
+      "flex": 0
+    }
+  }
+}

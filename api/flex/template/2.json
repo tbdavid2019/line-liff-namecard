@@ -1,0 +1,123 @@
+{
+  "type": "flex",
+  "altText": "開發團隊名單",
+  "contents": {
+    "type": "bubble",
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "開發團隊名單",
+          "weight": "bold",
+          "size": "xl"
+        },
+        {
+          "type": "text",
+          "text": "團隊成員",
+          "size": "xs",
+          "color": "#aaaaaa",
+          "margin": "xs"
+        },
+        {
+          "type": "separator",
+          "margin": "md"
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "margin": "md",
+          "spacing": "sm",
+          "contents": [
+            {
+              "type": "box",
+              "layout": "horizontal",
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "David",
+                  "size": "sm",
+                  "color": "#555555",
+                  "flex": 1
+                },
+                {
+                  "type": "text",
+                  "text": "Frontend Lead",
+                  "size": "sm",
+                  "color": "#111111",
+                  "align": "end",
+                  "flex": 2
+                }
+              ]
+            },
+            {
+              "type": "box",
+              "layout": "horizontal",
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "Alice",
+                  "size": "sm",
+                  "color": "#555555",
+                  "flex": 1
+                },
+                {
+                  "type": "text",
+                  "text": "Designer",
+                  "size": "sm",
+                  "color": "#111111",
+                  "align": "end",
+                  "flex": 2
+                }
+              ]
+            },
+            {
+              "type": "box",
+              "layout": "horizontal",
+              "contents": [
+                {
+                  "type": "text",
+                  "text": "Bob",
+                  "size": "sm",
+                  "color": "#555555",
+                  "flex": 1
+                },
+                {
+                  "type": "text",
+                  "text": "Backend Dev",
+                  "size": "sm",
+                  "color": "#111111",
+                  "align": "end",
+                  "flex": 2
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "footer": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "button",
+          "action": {
+            "type": "uri",
+            "label": "Location",
+            "uri": "https://maps.google.com"
+          }
+        },
+        {
+          "type": "button",
+          "action": {
+            "type": "uri",
+            "label": "Website",
+            "uri": "https://github.com/taichunmin"
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "type": "flex",
+  "altText": "David Tsai",
+  "contents": {
+    "type": "bubble",
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "image",
+          "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+          "size": "full",
+          "aspectMode": "cover",
+          "aspectRatio": "1:1",
+          "gravity": "center"
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "image",
+                  "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+                  "aspectMode": "cover",
+                  "size": "full"
+                }
+              ],
+              "cornerRadius": "100px",
+              "width": "72px",
+              "height": "72px"
+            },
+            {
+              "type": "text",
+              "text": "David Tsai",
+              "size": "xl",
+              "weight": "bold",
+              "margin": "md"
+            },
+            {
+              "type": "text",
+              "text": "全端工程師\n熱愛開源專案與新技術",
+              "size": "sm",
+              "color": "#999999",
+              "margin": "xs",
+              "wrap": true
+            },
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "Follow",
+                "uri": "https://github.com/taichunmin"
+              },
+              "style": "secondary",
+              "margin": "md"
+            }
+          ],
+          "position": "absolute",
+          "offsetBottom": "0px",
+          "offsetStart": "0px",
+          "offsetEnd": "0px",
+          "backgroundColor": "#ffffffaa",
+          "paddingAll": "20px",
+          "paddingTop": "18px"
+        }
+      ],
+      "paddingAll": "0px"
+    }
+  }
+}
