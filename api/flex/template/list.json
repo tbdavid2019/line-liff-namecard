@@ -4,76 +4,98 @@
     "title": "Right Align",
     "description": "來自 PsPrint 的樣板，上面有連結可以開啟，很適合用來製作個人名片！",
     "template": "Flex Message",
-    "cover": "https://i.imgur.com/tUvhifE.png"
+    "cover": "https://i.imgur.com/tUvhifE.png",
+    "source": "api/flex/source/psprint-3949.txt",
+    "sample": "api/flex/sample/psprint-3949.json"
   },
   {
     "id": "chatgpt-1",
     "title": "ChatGPT 問與答",
     "description": "讓你在 LINE 中模擬 ChatGPT 的問答畫面！上面有開啟自訂連結及再次分享的按鈕。",
     "template": "Flex Message",
-    "cover": "https://i.imgur.com/0uU5aCG.png"
+    "cover": "https://i.imgur.com/0uU5aCG.png",
+    "source": "api/flex/source/chatgpt-1.txt",
+    "sample": "api/flex/sample/chatgpt-1.json"
   },
   {
     "id": "psprint-592",
     "title": "Corporate Buzz",
     "description": "來自 PsPrint 的樣板，上面有連結可以開啟，很適合用來製作個人名片！",
     "template": "Flex Message",
-    "cover": "https://i.imgur.com/AjbhMam.png"
+    "cover": "https://i.imgur.com/AjbhMam.png",
+    "source": "api/flex/source/psprint-592.txt",
+    "sample": "api/flex/sample/psprint-592.json"
   },
   {
     "id": "facebook-post-link-1",
     "title": "Facebook Post Link",
     "description": "讓你在 LINE 中模擬 Facebook 分享連結，並且還可再次分享！",
     "template": "Flex Message",
-    "cover": "https://i.imgur.com/hO0LAHK.png"
+    "cover": "https://i.imgur.com/hO0LAHK.png",
+    "source": "api/flex/source/facebook-post-link-1.txt",
+    "sample": "api/flex/sample/facebook-post-link-1.json"
   },
   {
     "id": "acnh-passport-1",
     "title": "動物森友會護照",
     "description": "「集合吧！動物森友會」的護照",
     "template": "Flex Message",
-    "cover": "https://i.imgur.com/rGRMSdy.png"
+    "cover": "https://i.imgur.com/rGRMSdy.png",
+    "source": "api/flex/source/acnh-passport-1.txt",
+    "sample": "api/flex/sample/acnh-passport-1.json"
   },
   {
     "id": "chatbot-tw-1",
     "title": "Chatbot 台灣開發者",
     "description": "「Chatbot Developers Taiwan」的名片",
     "template": "Flex Message",
-    "cover": "https://i.imgur.com/lEKHcUY.png"
+    "cover": "https://i.imgur.com/lEKHcUY.png",
+    "source": "api/flex/source/chatbot-tw-1.txt",
+    "sample": "api/flex/sample/chatbot-tw-1.json"
   },
   {
     "id": "announcer-announcement",
     "title": "公告樣板 (Announcement)",
     "description": "活動公告專用樣板，包含圖片、時間、地點與詳細說明。",
     "template": "Flex Message",
-    "cover": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png"
+    "cover": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+    "source": "api/flex/source/announcer-announcement.txt",
+    "sample": "api/flex/sample/announcer-announcement.json"
   },
   {
     "id": "announcer-staff",
     "title": "名單樣板 (Staff List)",
     "description": "適合展示團隊成員、營業時間或其他清單資訊。",
     "template": "Flex Message",
-    "cover": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_2_restaurant.png"
+    "cover": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_2_restaurant.png",
+    "source": "api/flex/source/announcer-staff.txt",
+    "sample": "api/flex/sample/announcer-staff.json"
   },
   {
     "id": "announcer-card",
     "title": "卡片樣板 (Card)",
     "description": "展示個人或商品卡片，包含圓形頭像、背景圖與按鈕。",
     "template": "Flex Message",
-    "cover": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png"
+    "cover": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+    "source": "api/flex/source/announcer-card.txt",
+    "sample": "api/flex/sample/announcer-card.json"
   },
   {
     "id": "announcer-news",
     "title": "新聞樣板 (News)",
     "description": "類似新聞的圖文排版，適合分享文章或最新消息。",
     "template": "Flex Message",
-    "cover": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png"
+    "cover": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+    "source": "api/flex/source/announcer-news.txt",
+    "sample": "api/flex/sample/announcer-news.json"
   },
   {
     "id": "ticket-movie",
     "title": "票券樣板 (Ticket)",
     "description": "模擬電影票券或活動入場券，包含 QR Code 區塊。",
     "template": "Flex Message",
-    "cover": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_3_movie.png"
+    "cover": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_3_movie.png",
+    "source": "api/flex/source/ticket-movie.txt",
+    "sample": "api/flex/sample/ticket-movie.json"
   }
 ]

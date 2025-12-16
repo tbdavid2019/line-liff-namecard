@@ -1,0 +1,11 @@
+{
+  "title": "BROWN'S ADVENTURE\\nIN MOVIE",
+  "rating": "4.0",
+  "date": "Monday 25, 9:00PM",
+  "place": "7 Floor, No.3",
+  "seats": "C Row, 18 Seat",
+  "imageUrl": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_3_movie.png",
+  "qrcode": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/linecorp_code_withborder.png",
+  "url": "https://github.com/tbdavid2019",
+  "template": "cards/ticket-movie.txt"
+}

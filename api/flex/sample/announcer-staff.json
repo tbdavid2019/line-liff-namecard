@@ -1,0 +1,21 @@
+{
+  "title": "開發團隊名單",
+  "activity": "Team Members",
+  "url": "https://github.com/tbdavid2019",
+  "map": "https://maps.google.com",
+  "people": [
+    {
+      "name": "David",
+      "time": "Frontend"
+    },
+    {
+      "name": "Alice",
+      "time": "Design"
+    },
+    {
+      "name": "Bob",
+      "time": "Backend"
+    }
+  ],
+  "template": "cards/announcer-staff.txt"
+}

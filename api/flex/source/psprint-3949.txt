@@ -1,0 +1,151 @@
+<%
+function gaScreenView (vcard) {
+  const TEMPLATE_NAME = 'Right Align-2020/07/16'
+  let hash = CryptoJS.HmacMD5(JSON.stringify(vcard), TEMPLATE_NAME)
+  hash = CryptoJS.enc.Base64.stringify(hash).replace(/[+/=]/g, c => _.get({ '+': '-', '/': '_', '=': '' }, c))
+  return gtag.mpCollectUrl({
+    client_id: gtagClientId,
+    events: [{
+      name: 'template_impression',
+      params: {
+        session_id: gtagSessionId,
+        share_by: profile.userId ?? 'unknown',
+        template_name: TEMPLATE_NAME,
+        vcard_hash: hash,
+        vcard_name: vcard.name,
+      },
+    }],
+  })
+}
+%>
+
+{
+  "altText": ${JSON.stringify('請在手機上查看「' + vcard.name + '」的名片。')},
+  "type": "flex",
+  "contents": {
+    "size": "giga",
+    "type": "bubble",
+    "body": {
+      "layout": "horizontal",
+      "spacing": "md",
+      "type": "box",
+      "contents": [
+        {
+          "aspectMode": "cover",
+          "aspectRatio": "1:1",
+          "flex": 1,
+          "size": "full",
+          "type": "image",
+          "url": ${JSON.stringify(vcard.logo)}
+        },
+        {
+          "flex": 4,
+          "layout": "vertical",
+          "type": "box",
+          "contents": [
+            {
+              "align": "end",
+              "size": "xxl",
+              "text": ${JSON.stringify(vcard.name)},
+              "type": "text",
+              "weight": "bold"
+            },
+            {
+              "align": "end",
+              "size": "sm",
+              "text": ${JSON.stringify(vcard.title)},
+              "type": "text"
+            },
+            {
+              "align": "end",
+              "margin": "xxl",
+              "size": "lg",
+              "text": ${JSON.stringify(vcard.company)},
+              "type": "text",
+              "weight": "bold",
+              "action": {
+                "type": "uri",
+                "uri": ${JSON.stringify(_.trim(vcard.maps))}
+              }
+            },
+            {
+              "align": "end",
+              "size": "sm",
+              "text": ${JSON.stringify(vcard.address)},
+              "type": "text",
+              "action": {
+                "type": "uri",
+                "uri": ${JSON.stringify(_.trim(vcard.maps))}
+              }
+            },
+            {
+              "align": "end",
+              "margin": "xxl",
+              "text": ${JSON.stringify(_.trim(vcard.tel))},
+              "type": "text",
+              "action": {
+                "type": "uri",
+                "uri": ${JSON.stringify('tel:' + _.trim(vcard.tel))}
+              }
+            },
+            {
+              "align": "end",
+              "text": ${JSON.stringify(_.trim(vcard.email))},
+              "type": "text",
+              "action": {
+                "type": "uri",
+                "uri": ${JSON.stringify('mailto:' + _.trim(vcard.email))}
+              }
+            },
+            {
+              "align": "end",
+              "text": ${JSON.stringify(_.trim(vcard.url))},
+              "type": "text",
+              "action": {
+                "type": "uri",
+                "uri": ${JSON.stringify(_.trim(vcard.url))}
+              }
+            },
+            {
+              "height": "1px",
+              "layout": "vertical",
+              "offsetStart": "0px",
+              "offsetTop": "0px",
+              "position": "absolute",
+              "type": "box",
+              "width": "1px",
+              "contents": [
+                {
+                  "align": "center",
+                  "aspectMode": "cover",
+                  "aspectRatio": "1:1",
+                  "gravity": "center",
+                  "size": "full",
+                  "type": "image",
+                  "url": ${JSON.stringify(gaScreenView(vcard))}
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "footer": {
+      "layout": "vertical",
+      "type": "box",
+      "contents": [
+        {
+          "action": {
+            "label": "Share - 分享",
+            "type": "uri",
+            "uri": ${JSON.stringify(liffLink)}
+          },
+          "color": "#0000ff",
+          "height": "sm",
+          "style": "primary",
+          "type": "button"
+        }
+      ]
+    }
+  }
+}

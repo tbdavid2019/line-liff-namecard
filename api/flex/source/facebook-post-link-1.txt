@@ -1,5 +1,29 @@
+<%
+function truncate (str) {
+  return _.truncate(str, { length: 20, omission: '' })
+}
+function gaScreenView (vcard) {
+  const TEMPLATE_NAME = 'Facebook分享連結-2020/09/18'
+  let hash = CryptoJS.HmacMD5(JSON.stringify(vcard), TEMPLATE_NAME)
+  hash = CryptoJS.enc.Base64.stringify(hash).replace(/[+/=]/g, c => _.get({ '+': '-', '/': '_', '=': '' }, c))
+  return gtag.mpCollectUrl({
+    client_id: gtagClientId,
+    events: [{
+      name: 'template_impression',
+      params: {
+        session_id: gtagSessionId,
+        share_by: profile.userId ?? 'unknown',
+        template_name: TEMPLATE_NAME,
+        vcard_hash: hash,
+        vcard_name: truncate(vcard.title),
+      },
+    }],
+  })
+}
+%>
+
 {
-  "altText": "Lisa 分享了 1 個連結。",
+  "altText": ${JSON.stringify(vcard.altText || (vcard.author + '分享了一個連結'))},
   "type": "flex",
   "contents": {
     "size": "giga",
@@ -17,7 +41,7 @@
           "action": {
             "label": "action",
             "type": "uri",
-            "uri": "https://david888.com/"
+            "uri": ${JSON.stringify(_.trim(vcard.website))}
           },
           "contents": [
             {
@@ -43,7 +67,7 @@
                       "aspectRatio": "1:1",
                       "size": "full",
                       "type": "image",
-                      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/170702_%EB%B8%94%EB%9E%99%ED%95%91%ED%81%AC_%ED%8C%AC%EC%82%AC%EC%9D%B8%ED%9A%8C_%2810%29.jpg"
+                      "url": ${JSON.stringify(vcard.avatar)}
                     }
                   ]
                 }
@@ -60,13 +84,13 @@
                     {
                       "flex": 0,
                       "gravity": "center",
-                      "text": "Lisa",
+                      "text": ${JSON.stringify(vcard.author)},
                       "type": "text",
                       "weight": "bold"
                     },
                     {
                       "gravity": "center",
-                      "text": "Lisa 分享了 1 個連結。",
+                      "text": ${JSON.stringify(vcard.action)},
                       "type": "text"
                     }
                   ]
@@ -83,7 +107,7 @@
                 },
                 {
                   "size": "xxs",
-                  "text": "12月16日 15:30",
+                  "text": ${JSON.stringify(dayjs().format('M月D日 HH:mm'))},
                   "type": "text"
                 }
               ]
@@ -96,15 +120,15 @@
           "action": {
             "label": "action",
             "type": "uri",
-            "uri": "https://podcast.david888.com/"
+            "uri": ${JSON.stringify(_.trim(vcard.link))}
           },
           "contents": [
             {
               "aspectMode": "cover",
-              "aspectRatio": "1280:640",
+              "aspectRatio": ${JSON.stringify(vcard.ratio)},
               "size": "full",
               "type": "image",
-              "url": "https://md.david888.com/uploads/upload_b480eddc4c332d553ed36849285a368d.jpg"
+              "url": ${JSON.stringify(vcard.image)}
             }
           ]
         },
@@ -116,19 +140,19 @@
           "action": {
             "label": "action",
             "type": "uri",
-            "uri": "https://podcast.david888.com/"
+            "uri": ${JSON.stringify(_.trim(vcard.link))}
           },
           "contents": [
             {
               "size": "lg",
-              "text": "從 Web 聽最新的每日Pod新聞，並收聽你最喜愛的節目。",
+              "text": ${JSON.stringify(vcard.title)},
               "type": "text",
               "weight": "bold"
             },
             {
               "maxLines": 3,
               "size": "sm",
-              "text": "從 Web 聽最新的每日Pod新聞，並收聽你最喜愛的節目。",
+              "text": ${JSON.stringify(vcard.desc)},
               "type": "text",
               "wrap": true
             }
@@ -150,7 +174,7 @@
               "action": {
                 "label": "action",
                 "type": "uri",
-                "uri": "https://liff.line.me/mock-liff-id/share.html"
+                "uri": ${JSON.stringify(liffLink)}
               },
               "contents": [
                 {
@@ -205,7 +229,7 @@
               "action": {
                 "label": "action",
                 "type": "uri",
-                "uri": "https://podcast.david888.com/"
+                "uri": ${JSON.stringify(_.trim(vcard.link))}
               },
               "contents": [
                 {
@@ -269,7 +293,7 @@
               "gravity": "center",
               "size": "full",
               "type": "image",
-              "url": "https://mock-ga-url"
+              "url": ${JSON.stringify(gaScreenView(vcard))}
             }
           ]
         }

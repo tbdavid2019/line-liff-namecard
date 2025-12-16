@@ -1,0 +1,8 @@
+{
+  "image": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+  "date": "2023.12.16",
+  "description": "【重要通知】API 服務維護公告",
+  "link": "https://github.com/tbdavid2019/liff-businesscard",
+  "tag": "News",
+  "template": "cards/announcer-news.txt"
+}
