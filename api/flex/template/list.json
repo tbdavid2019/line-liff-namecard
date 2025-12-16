@@ -68,5 +68,12 @@
     "description": "類似新聞的圖文排版，適合分享文章或最新消息。",
     "template": "Flex Message",
     "cover": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png"
+  },
+  {
+    "id": "ticket-movie",
+    "title": "票券樣板 (Ticket)",
+    "description": "模擬電影票券或活動入場券，包含 QR Code 區塊。",
+    "template": "Flex Message",
+    "cover": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_3_movie.png"
   }
 ]
