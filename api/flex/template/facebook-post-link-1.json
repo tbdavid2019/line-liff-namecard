@@ -1,0 +1,279 @@
+{
+  "altText": "Lisa 分享了 1 個連結。",
+  "type": "flex",
+  "contents": {
+    "size": "giga",
+    "type": "bubble",
+    "body": {
+      "layout": "vertical",
+      "paddingAll": "0px",
+      "type": "box",
+      "contents": [
+        {
+          "layout": "horizontal",
+          "paddingAll": "10px",
+          "spacing": "md",
+          "type": "box",
+          "action": {
+            "label": "action",
+            "type": "uri",
+            "uri": "https://david888.com/"
+          },
+          "contents": [
+            {
+              "borderColor": "#1877f2",
+              "borderWidth": "2px",
+              "cornerRadius": "20px",
+              "height": "40px",
+              "layout": "vertical",
+              "type": "box",
+              "width": "40px",
+              "contents": [
+                {
+                  "borderColor": "#ffffff",
+                  "borderWidth": "2px",
+                  "cornerRadius": "20px",
+                  "height": "36px",
+                  "layout": "vertical",
+                  "type": "box",
+                  "width": "36px",
+                  "contents": [
+                    {
+                      "aspectMode": "cover",
+                      "aspectRatio": "1:1",
+                      "size": "full",
+                      "type": "image",
+                      "url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/170702_%EB%B8%94%EB%9E%99%ED%95%91%ED%81%AC_%ED%8C%AC%EC%82%AC%EC%9D%B8%ED%9A%8C_%2810%29.jpg"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "layout": "vertical",
+              "type": "box",
+              "contents": [
+                {
+                  "layout": "horizontal",
+                  "type": "box",
+                  "contents": [
+                    {
+                      "flex": 0,
+                      "gravity": "center",
+                      "text": "Lisa",
+                      "type": "text",
+                      "weight": "bold"
+                    },
+                    {
+                      "gravity": "center",
+                      "text": "Lisa 分享了 1 個連結。",
+                      "type": "text"
+                    }
+                  ]
+                },
+                {
+                  "flex": 1,
+                  "layout": "vertical",
+                  "type": "box",
+                  "contents": [
+                    {
+                      "type": "filler"
+                    }
+                  ]
+                },
+                {
+                  "size": "xxs",
+                  "text": "12月16日 14:39",
+                  "type": "text"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "layout": "vertical",
+          "type": "box",
+          "action": {
+            "label": "action",
+            "type": "uri",
+            "uri": "https://podcast.david888.com/"
+          },
+          "contents": [
+            {
+              "aspectMode": "cover",
+              "aspectRatio": "1280:640",
+              "size": "full",
+              "type": "image",
+              "url": "https://md.david888.com/uploads/upload_b480eddc4c332d553ed36849285a368d.jpg"
+            }
+          ]
+        },
+        {
+          "layout": "vertical",
+          "paddingAll": "15px",
+          "spacing": "md",
+          "type": "box",
+          "action": {
+            "label": "action",
+            "type": "uri",
+            "uri": "https://podcast.david888.com/"
+          },
+          "contents": [
+            {
+              "size": "lg",
+              "text": "從 Web 聽最新的每日Pod新聞，並收聽你最喜愛的節目。",
+              "type": "text",
+              "weight": "bold"
+            },
+            {
+              "maxLines": 3,
+              "size": "sm",
+              "text": "從 Web 聽最新的每日Pod新聞，並收聽你最喜愛的節目。",
+              "type": "text",
+              "wrap": true
+            }
+          ]
+        },
+        {
+          "type": "separator"
+        },
+        {
+          "layout": "horizontal",
+          "type": "box",
+          "contents": [
+            {
+              "flex": 1,
+              "layout": "horizontal",
+              "paddingAll": "15px",
+              "spacing": "sm",
+              "type": "box",
+              "action": {
+                "label": "action",
+                "type": "uri",
+                "uri": "https://liff.line.me/mock-liff-id/share.html"
+              },
+              "contents": [
+                {
+                  "flex": 1,
+                  "layout": "vertical",
+                  "type": "box",
+                  "contents": [
+                    {
+                      "type": "filler"
+                    }
+                  ]
+                },
+                {
+                  "height": "20px",
+                  "layout": "vertical",
+                  "type": "box",
+                  "width": "20px",
+                  "contents": [
+                    {
+                      "aspectMode": "cover",
+                      "aspectRatio": "1:1",
+                      "size": "full",
+                      "type": "image",
+                      "url": "https://i.imgur.com/IFjR25G.png"
+                    }
+                  ]
+                },
+                {
+                  "flex": 0,
+                  "gravity": "center",
+                  "text": "分享",
+                  "type": "text"
+                },
+                {
+                  "flex": 1,
+                  "layout": "vertical",
+                  "type": "box",
+                  "contents": [
+                    {
+                      "type": "filler"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "flex": 1,
+              "layout": "horizontal",
+              "paddingAll": "15px",
+              "spacing": "sm",
+              "type": "box",
+              "action": {
+                "label": "action",
+                "type": "uri",
+                "uri": "https://podcast.david888.com/"
+              },
+              "contents": [
+                {
+                  "flex": 1,
+                  "layout": "vertical",
+                  "type": "box",
+                  "contents": [
+                    {
+                      "type": "filler"
+                    }
+                  ]
+                },
+                {
+                  "height": "20px",
+                  "layout": "vertical",
+                  "type": "box",
+                  "width": "20px",
+                  "contents": [
+                    {
+                      "aspectMode": "cover",
+                      "aspectRatio": "1:1",
+                      "size": "full",
+                      "type": "image",
+                      "url": "https://i.imgur.com/tg4zN4R.png"
+                    }
+                  ]
+                },
+                {
+                  "flex": 0,
+                  "gravity": "center",
+                  "text": "開啟",
+                  "type": "text"
+                },
+                {
+                  "flex": 1,
+                  "layout": "vertical",
+                  "type": "box",
+                  "contents": [
+                    {
+                      "type": "filler"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "height": "1px",
+          "layout": "vertical",
+          "offsetStart": "0px",
+          "offsetTop": "0px",
+          "position": "absolute",
+          "type": "box",
+          "width": "1px",
+          "contents": [
+            {
+              "align": "center",
+              "aspectMode": "cover",
+              "aspectRatio": "1:1",
+              "gravity": "center",
+              "size": "full",
+              "type": "image",
+              "url": "https://mock-ga-url"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

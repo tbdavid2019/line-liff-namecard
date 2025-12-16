@@ -1,0 +1,383 @@
+{
+  "altText": "大家好，我是「美麗島」的「小仙女」，好友代碼是 SW-0000-0000-0000，請加我好友。」",
+  "type": "flex",
+  "contents": {
+    "size": "giga",
+    "type": "bubble",
+    "body": {
+      "backgroundColor": "#FBF6D9",
+      "layout": "vertical",
+      "type": "box",
+      "contents": [
+        {
+          "layout": "horizontal",
+          "spacing": "xl",
+          "type": "box",
+          "contents": [
+            {
+              "flex": 1,
+              "layout": "vertical",
+              "type": "box",
+              "contents": [
+                {
+                  "type": "filler"
+                }
+              ]
+            },
+            {
+              "flex": 1,
+              "layout": "vertical",
+              "type": "box",
+              "contents": [
+                {
+                  "flex": 1,
+                  "layout": "vertical",
+                  "type": "box",
+                  "contents": [
+                    {
+                      "type": "filler"
+                    }
+                  ]
+                },
+                {
+                  "borderColor": "#989F7E",
+                  "borderWidth": "1px",
+                  "height": "0px",
+                  "layout": "vertical",
+                  "type": "box",
+                  "contents": [
+                    {
+                      "type": "filler"
+                    }
+                  ]
+                },
+                {
+                  "flex": 1,
+                  "layout": "vertical",
+                  "type": "box",
+                  "contents": [
+                    {
+                      "type": "filler"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "color": "#989F7E",
+              "flex": 0,
+              "size": "sm",
+              "text": "PASSPORT",
+              "type": "text",
+              "weight": "bold"
+            },
+            {
+              "flex": 1,
+              "layout": "vertical",
+              "type": "box",
+              "contents": [
+                {
+                  "flex": 1,
+                  "layout": "vertical",
+                  "type": "box",
+                  "contents": [
+                    {
+                      "type": "filler"
+                    }
+                  ]
+                },
+                {
+                  "borderColor": "#989F7E",
+                  "borderWidth": "1px",
+                  "height": "0px",
+                  "layout": "vertical",
+                  "type": "box",
+                  "contents": [
+                    {
+                      "type": "filler"
+                    }
+                  ]
+                },
+                {
+                  "flex": 1,
+                  "layout": "vertical",
+                  "type": "box",
+                  "contents": [
+                    {
+                      "type": "filler"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "flex": 1,
+              "layout": "vertical",
+              "type": "box",
+              "contents": [
+                {
+                  "type": "filler"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "backgroundColor": "#E7EBB9",
+          "layout": "vertical",
+          "margin": "xl",
+          "paddingAll": "20px",
+          "spacing": "xxl",
+          "type": "box",
+          "contents": [
+            {
+              "layout": "horizontal",
+              "spacing": "xxl",
+              "type": "box",
+              "contents": [
+                {
+                  "backgroundColor": "#EAEED3",
+                  "borderColor": "#F8F7D9",
+                  "borderWidth": "7px",
+                  "cornerRadius": "7px",
+                  "height": "100px",
+                  "layout": "vertical",
+                  "type": "box",
+                  "width": "100px",
+                  "contents": [
+                    {
+                      "align": "center",
+                      "aspectMode": "cover",
+                      "aspectRatio": "1:1",
+                      "gravity": "center",
+                      "size": "full",
+                      "type": "image",
+                      "url": "https://acnhcdn.com/latest/NpcIcon/cat18.png"
+                    }
+                  ]
+                },
+                {
+                  "layout": "vertical",
+                  "type": "box",
+                  "contents": [
+                    {
+                      "flex": 1,
+                      "gravity": "center",
+                      "size": "lg",
+                      "text": "幸運的小女孩",
+                      "type": "text",
+                      "weight": "bold"
+                    },
+                    {
+                      "backgroundColor": "#F9F9D7",
+                      "borderWidth": "2px",
+                      "cornerRadius": "3px",
+                      "height": "0px",
+                      "layout": "vertical",
+                      "type": "box",
+                      "contents": [
+                        {
+                          "type": "filler"
+                        }
+                      ]
+                    },
+                    {
+                      "flex": 1,
+                      "gravity": "center",
+                      "size": "3xl",
+                      "text": "小仙女",
+                      "type": "text",
+                      "weight": "bold"
+                    },
+                    {
+                      "backgroundColor": "#F9F9D7",
+                      "borderWidth": "2px",
+                      "cornerRadius": "3px",
+                      "height": "0px",
+                      "layout": "vertical",
+                      "type": "box",
+                      "contents": [
+                        {
+                          "type": "filler"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "layout": "horizontal",
+              "type": "box",
+              "contents": [
+                {
+                  "flex": 2,
+                  "layout": "horizontal",
+                  "spacing": "md",
+                  "type": "box",
+                  "contents": [
+                    {
+                      "height": "24px",
+                      "layout": "vertical",
+                      "paddingAll": "3px",
+                      "type": "box",
+                      "width": "24px",
+                      "contents": [
+                        {
+                          "align": "center",
+                          "aspectMode": "cover",
+                          "aspectRatio": "1:1",
+                          "gravity": "center",
+                          "size": "full",
+                          "type": "image",
+                          "url": "https://i.imgur.com/2ebwzTk.png"
+                        }
+                      ]
+                    },
+                    {
+                      "gravity": "center",
+                      "text": "美麗島",
+                      "type": "text"
+                    }
+                  ]
+                },
+                {
+                  "flex": 1,
+                  "layout": "horizontal",
+                  "spacing": "md",
+                  "type": "box",
+                  "contents": [
+                    {
+                      "height": "24px",
+                      "layout": "vertical",
+                      "type": "box",
+                      "width": "24px",
+                      "contents": [
+                        {
+                          "align": "center",
+                          "aspectMode": "cover",
+                          "aspectRatio": "1:1",
+                          "gravity": "center",
+                          "size": "full",
+                          "type": "image",
+                          "url": "https://acnhcdn.com/latest/MenuIcon/Apple.png"
+                        }
+                      ]
+                    },
+                    {
+                      "gravity": "center",
+                      "text": "蘋果",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "backgroundColor": "#F9F9D7",
+              "borderWidth": "2px",
+              "cornerRadius": "3px",
+              "height": "0px",
+              "layout": "vertical",
+              "margin": "sm",
+              "type": "box",
+              "contents": [
+                {
+                  "type": "filler"
+                }
+              ]
+            },
+            {
+              "layout": "horizontal",
+              "type": "box",
+              "contents": [
+                {
+                  "flex": 2,
+                  "layout": "horizontal",
+                  "spacing": "md",
+                  "type": "box",
+                  "contents": [
+                    {
+                      "height": "24px",
+                      "layout": "vertical",
+                      "paddingAll": "3px",
+                      "type": "box",
+                      "width": "24px",
+                      "contents": [
+                        {
+                          "align": "center",
+                          "aspectMode": "cover",
+                          "aspectRatio": "1:1",
+                          "gravity": "center",
+                          "size": "full",
+                          "type": "image",
+                          "url": "https://i.imgur.com/m9M26rs.png"
+                        }
+                      ]
+                    },
+                    {
+                      "gravity": "center",
+                      "text": "SW-0000-0000-0000",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "backgroundColor": "#F9F9D7",
+              "borderWidth": "2px",
+              "cornerRadius": "3px",
+              "height": "0px",
+              "layout": "vertical",
+              "margin": "sm",
+              "type": "box",
+              "contents": [
+                {
+                  "type": "filler"
+                }
+              ]
+            },
+            {
+              "height": "1px",
+              "layout": "vertical",
+              "offsetStart": "0px",
+              "offsetTop": "0px",
+              "position": "absolute",
+              "type": "box",
+              "width": "1px",
+              "contents": [
+                {
+                  "align": "center",
+                  "aspectMode": "cover",
+                  "aspectRatio": "1:1",
+                  "gravity": "center",
+                  "size": "full",
+                  "type": "image",
+                  "url": "https://mock-ga-url"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "footer": {
+      "layout": "vertical",
+      "type": "box",
+      "contents": [
+        {
+          "action": {
+            "label": "Share - 分享",
+            "type": "uri",
+            "uri": "https://liff.line.me/mock-liff-id/share.html"
+          },
+          "color": "#0000ff",
+          "height": "sm",
+          "style": "primary",
+          "type": "button"
+        }
+      ]
+    }
+  }
+}

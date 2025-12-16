@@ -1,0 +1,130 @@
+{
+  "altText": "請在手機上查看「江先生」的名片。",
+  "type": "flex",
+  "contents": {
+    "size": "giga",
+    "type": "bubble",
+    "body": {
+      "layout": "horizontal",
+      "spacing": "md",
+      "type": "box",
+      "contents": [
+        {
+          "aspectMode": "cover",
+          "aspectRatio": "1:1",
+          "flex": 1,
+          "size": "full",
+          "type": "image",
+          "url": "https://md.david888.com/uploads/upload_b480eddc4c332d553ed36849285a368d.jpg"
+        },
+        {
+          "flex": 4,
+          "layout": "vertical",
+          "type": "box",
+          "contents": [
+            {
+              "align": "end",
+              "size": "xxl",
+              "text": "江先生",
+              "type": "text",
+              "weight": "bold"
+            },
+            {
+              "align": "end",
+              "size": "sm",
+              "text": "CTO",
+              "type": "text"
+            },
+            {
+              "align": "end",
+              "margin": "xxl",
+              "size": "lg",
+              "text": "大衛發發發股份有限公司",
+              "type": "text",
+              "weight": "bold",
+              "action": {
+                "type": "uri",
+                "uri": "https://www.google.com/maps/place/115%E8%87%BA%E5%8C%97%E5%B8%82%E5%8D%97%E6%B8%AF%E5%8D%80%E7%B6%93%E8%B2%BF%E4%BA%8C%E8%B7%AF1%E8%99%9F/@25.0564452,121.6153764,17z/data=!3m1!4b1!4m6!3m5!1s0x3442aca818fcc561:0x9c78adbe2dea2828!8m2!3d25.0564452!4d121.6179513!16s%2Fg%2F11bw3xv0gw"
+              }
+            },
+            {
+              "align": "end",
+              "size": "sm",
+              "text": "115臺北市南港區經貿二路1號",
+              "type": "text",
+              "action": {
+                "type": "uri",
+                "uri": "https://www.google.com/maps/place/115%E8%87%BA%E5%8C%97%E5%B8%82%E5%8D%97%E6%B8%AF%E5%8D%80%E7%B6%93%E8%B2%BF%E4%BA%8C%E8%B7%AF1%E8%99%9F/@25.0564452,121.6153764,17z/data=!3m1!4b1!4m6!3m5!1s0x3442aca818fcc561:0x9c78adbe2dea2828!8m2!3d25.0564452!4d121.6179513!16s%2Fg%2F11bw3xv0gw"
+              }
+            },
+            {
+              "align": "end",
+              "margin": "xxl",
+              "text": "0906541100,000",
+              "type": "text",
+              "action": {
+                "type": "uri",
+                "uri": "tel:0906541100,000"
+              }
+            },
+            {
+              "align": "end",
+              "text": "cto@david888.com",
+              "type": "text",
+              "action": {
+                "type": "uri",
+                "uri": "mailto:cto@david888.com"
+              }
+            },
+            {
+              "align": "end",
+              "text": "https://david888.com",
+              "type": "text",
+              "action": {
+                "type": "uri",
+                "uri": "https://david888.com"
+              }
+            },
+            {
+              "height": "1px",
+              "layout": "vertical",
+              "offsetStart": "0px",
+              "offsetTop": "0px",
+              "position": "absolute",
+              "type": "box",
+              "width": "1px",
+              "contents": [
+                {
+                  "align": "center",
+                  "aspectMode": "cover",
+                  "aspectRatio": "1:1",
+                  "gravity": "center",
+                  "size": "full",
+                  "type": "image",
+                  "url": "https://mock-ga-url"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "footer": {
+      "layout": "vertical",
+      "type": "box",
+      "contents": [
+        {
+          "action": {
+            "label": "Share - 分享",
+            "type": "uri",
+            "uri": "https://liff.line.me/mock-liff-id/share.html"
+          },
+          "color": "#0000ff",
+          "height": "sm",
+          "style": "primary",
+          "type": "button"
+        }
+      ]
+    }
+  }
+}

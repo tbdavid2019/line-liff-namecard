@@ -1,30 +1,72 @@
 [
   {
-    "id": "1",
-    "template": "1",
-    "title": "數位名片新功能上線",
-    "description": "我們剛剛更新了數位名片的功能！\n新增了 Flex Message 樣板支援，讓您可以更方便地分享資訊。\n\n快來試試看吧！",
+    "id": "psprint-3949",
+    "title": "Right Align",
+    "description": "來自 PsPrint 的樣板，上面有連結可以開啟，很適合用來製作個人名片！",
+    "template": "Flex Message",
+    "cover": "https://i.imgur.com/tUvhifE.png"
+  },
+  {
+    "id": "chatgpt-1",
+    "title": "ChatGPT 問與答",
+    "description": "讓你在 LINE 中模擬 ChatGPT 的問答畫面！上面有開啟自訂連結及再次分享的按鈕。",
+    "template": "Flex Message",
+    "cover": "https://i.imgur.com/0uU5aCG.png"
+  },
+  {
+    "id": "psprint-592",
+    "title": "Corporate Buzz",
+    "description": "來自 PsPrint 的樣板，上面有連結可以開啟，很適合用來製作個人名片！",
+    "template": "Flex Message",
+    "cover": "https://i.imgur.com/AjbhMam.png"
+  },
+  {
+    "id": "facebook-post-link-1",
+    "title": "Facebook Post Link",
+    "description": "讓你在 LINE 中模擬 Facebook 分享連結，並且還可再次分享！",
+    "template": "Flex Message",
+    "cover": "https://i.imgur.com/hO0LAHK.png"
+  },
+  {
+    "id": "acnh-passport-1",
+    "title": "動物森友會護照",
+    "description": "「集合吧！動物森友會」的護照",
+    "template": "Flex Message",
+    "cover": "https://i.imgur.com/rGRMSdy.png"
+  },
+  {
+    "id": "chatbot-tw-1",
+    "title": "Chatbot 台灣開發者",
+    "description": "「Chatbot Developers Taiwan」的名片",
+    "template": "Flex Message",
+    "cover": "https://i.imgur.com/lEKHcUY.png"
+  },
+  {
+    "id": "announcer-announcement",
+    "title": "公告樣板 (Announcement)",
+    "description": "活動公告專用樣板，包含圖片、時間、地點與詳細說明。",
+    "template": "Flex Message",
     "cover": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png"
   },
   {
-    "id": "2",
-    "template": "2",
-    "title": "開發團隊名單",
-    "description": "",
+    "id": "announcer-staff",
+    "title": "名單樣板 (Staff List)",
+    "description": "適合展示團隊成員、營業時間或其他清單資訊。",
+    "template": "Flex Message",
     "cover": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_2_restaurant.png"
   },
   {
-    "id": "3",
-    "template": "3",
-    "title": "David Tsai",
-    "description": "全端工程師\n熱愛開源專案與新技術",
+    "id": "announcer-card",
+    "title": "卡片樣板 (Card)",
+    "description": "展示個人或商品卡片，包含圓形頭像、背景圖與按鈕。",
+    "template": "Flex Message",
     "cover": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png"
   },
   {
-    "id": "4",
-    "template": "4",
-    "title": "【重要通知】API 服務維護公告",
-    "description": "【重要通知】API 服務維護公告",
+    "id": "announcer-news",
+    "title": "新聞樣板 (News)",
+    "description": "類似新聞的圖文排版，適合分享文章或最新消息。",
+    "template": "Flex Message",
     "cover": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png"
   }
 ]

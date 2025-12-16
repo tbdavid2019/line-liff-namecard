@@ -1,0 +1,71 @@
+{
+  "type": "flex",
+  "altText": "【重要通知】API 服務維護公告",
+  "contents": {
+    "type": "bubble",
+    "size": "micro",
+    "hero": {
+      "type": "image",
+      "url": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png",
+      "size": "full",
+      "aspectMode": "cover",
+      "aspectRatio": "320:213",
+      "action": {
+        "type": "uri",
+        "uri": "https://github.com/tbdavid2019/liff-businesscard"
+      }
+    },
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": "News",
+          "weight": "bold",
+          "color": "#1DB446",
+          "size": "sm"
+        },
+        {
+          "type": "text",
+          "text": "【重要通知】API 服務維護公告",
+          "weight": "bold",
+          "size": "sm",
+          "margin": "md",
+          "wrap": true,
+          "maxLines": 2
+        },
+        {
+          "type": "text",
+          "text": "2023.12.16",
+          "size": "xs",
+          "color": "#aaaaaa",
+          "margin": "xs",
+          "align": "end"
+        }
+      ],
+      "action": {
+        "type": "uri",
+        "uri": "https://github.com/tbdavid2019/liff-businesscard"
+      },
+      "paddingAll": "13px"
+    },
+    "footer": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "button",
+          "action": {
+            "type": "uri",
+            "label": "Share",
+            "uri": "https://liff.line.me/mock-liff-id/share.html"
+          },
+          "height": "sm",
+          "style": "link",
+          "margin": "sm"
+        }
+      ]
+    }
+  }
+}

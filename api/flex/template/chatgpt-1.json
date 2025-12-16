@@ -1,0 +1,187 @@
+{
+  "altText": "喝酒對於大腦皮質細胞的傷害是不可逆的?",
+  "type": "flex",
+  "contents": {
+    "size": "giga",
+    "type": "bubble",
+    "body": {
+      "layout": "vertical",
+      "paddingAll": "0px",
+      "type": "box",
+      "contents": [
+        {
+          "backgroundColor": "#343541",
+          "layout": "horizontal",
+          "paddingAll": "16px",
+          "type": "box",
+          "action": {
+            "label": "action",
+            "type": "uri",
+            "uri": "https://liff.line.me/mock-liff-id/share.html"
+          },
+          "contents": [
+            {
+              "cornerRadius": "2px",
+              "height": "30px",
+              "layout": "vertical",
+              "type": "box",
+              "width": "30px",
+              "contents": [
+                {
+                  "aspectMode": "cover",
+                  "aspectRatio": "1:1",
+                  "size": "full",
+                  "type": "image",
+                  "url": "https://i.imgur.com/1KZoSue.png"
+                }
+              ]
+            },
+            {
+              "layout": "vertical",
+              "margin": "24px",
+              "type": "box",
+              "contents": [
+                {
+                  "color": "#ffffff",
+                  "lineSpacing": "6px",
+                  "size": "16px",
+                  "text": "喝酒對於大腦皮質細胞的傷害是不可逆的?",
+                  "type": "text",
+                  "wrap": true
+                },
+                {
+                  "alignItems": "center",
+                  "justifyContent": "flex-end",
+                  "layout": "horizontal",
+                  "margin": "16px",
+                  "type": "box",
+                  "contents": [
+                    {
+                      "height": "16px",
+                      "layout": "vertical",
+                      "type": "box",
+                      "width": "16px",
+                      "contents": [
+                        {
+                          "aspectMode": "cover",
+                          "aspectRatio": "1:1",
+                          "size": "full",
+                          "type": "image",
+                          "url": "https://i.imgur.com/cpgkZST.png"
+                        }
+                      ]
+                    },
+                    {
+                      "color": "#acacbe",
+                      "flex": 0,
+                      "margin": "6px",
+                      "size": "14px",
+                      "text": "分享",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "backgroundColor": "#444654",
+          "layout": "horizontal",
+          "paddingAll": "16px",
+          "type": "box",
+          "action": {
+            "label": "action",
+            "type": "uri",
+            "uri": "https://david888.com/"
+          },
+          "contents": [
+            {
+              "cornerRadius": "2px",
+              "height": "30px",
+              "layout": "vertical",
+              "type": "box",
+              "width": "30px",
+              "contents": [
+                {
+                  "aspectMode": "cover",
+                  "aspectRatio": "1:1",
+                  "size": "full",
+                  "type": "image",
+                  "url": "https://i.imgur.com/7u8NHYz.png"
+                }
+              ]
+            },
+            {
+              "layout": "vertical",
+              "margin": "24px",
+              "type": "box",
+              "contents": [
+                {
+                  "color": "#ffffff",
+                  "lineSpacing": "6px",
+                  "size": "16px",
+                  "text": "✔ 長期大量飲酒與大腦結構性改變（萎縮 / 神經退行）有強烈關聯。 一些變化是 神經細胞死亡或結構性損傷層面，對功能有長期影響。酒精導致的真正細胞死亡 ≠ 自然再生，通常是不可逆的。",
+                  "type": "text",
+                  "wrap": true
+                },
+                {
+                  "alignItems": "center",
+                  "justifyContent": "flex-end",
+                  "layout": "horizontal",
+                  "margin": "16px",
+                  "type": "box",
+                  "contents": [
+                    {
+                      "height": "16px",
+                      "layout": "vertical",
+                      "type": "box",
+                      "width": "16px",
+                      "contents": [
+                        {
+                          "aspectMode": "cover",
+                          "aspectRatio": "1:1",
+                          "size": "full",
+                          "type": "image",
+                          "url": "https://i.imgur.com/TKLR5OZ.png"
+                        }
+                      ]
+                    },
+                    {
+                      "color": "#acacbe",
+                      "flex": 0,
+                      "margin": "6px",
+                      "size": "14px",
+                      "text": "開啟",
+                      "type": "text"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "height": "1px",
+          "layout": "vertical",
+          "offsetStart": "0px",
+          "offsetTop": "0px",
+          "position": "absolute",
+          "type": "box",
+          "width": "1px",
+          "contents": [
+            {
+              "align": "center",
+              "aspectMode": "cover",
+              "aspectRatio": "1:1",
+              "gravity": "center",
+              "size": "full",
+              "type": "image",
+              "url": "https://mock-ga-url"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
