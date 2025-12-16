@@ -1,0 +1,52 @@
+extends /layout/forms
+
+block beforehtml
+  -
+    title = 'AiTAGO 影片訊息模板'
+    description = '影片訊息模板，含影片與預覽圖'
+
+block meta
+  meta(property="og:image:height", content="640")
+  meta(property="og:image:width", content="1280")
+  meta(property="og:image", content="https://i.ibb.co/q3NKmcRr/snorlax-psyduck.jpg")
+  meta(property="og:url", content=baseurl+"forms/aitago-video-1.html")
+
+block form
+  .form-group.was-validated.my-2
+    label(for="vcard-previewImageUrl") 預覽圖網址
+    input#vcard-previewImageUrl.form-control.form-control-sm(type="url", inputmode="url", required, pattern="https://\\S+", v-model.trim="vcard.previewImageUrl")
+    small.form-text.text-muted 請填寫預覽圖網址，必須是 #[code https://] 開頭。
+  .form-group.was-validated.my-2
+    label(for="vcard-originalContentUrl") 影片網址
+    input#vcard-originalContentUrl.form-control.form-control-sm(type="url", inputmode="url", required, pattern="https://\\S+\\.mp4", v-model.trim="vcard.originalContentUrl")
+    small.form-text.text-muted 請填寫影片網址，必須是 #[code https://] 開頭的 MP4 格式。
+
+  hr.my-4
+  h5 獨立分享連結
+  .input-group.my-2
+    input.form-control.form-control-sm(type="text", readonly, :value="shortcut || ''")
+    .input-group-append
+      button.btn.btn-outline-secondary(type="button", @click="btnCopy(shortcut)", :disabled="!shortcut") 複製
+  small.form-text.text-muted(v-if="shortcut") 此連結已包含目前表單資料，分享或收藏後可直接開啟 LIFF 使用。
+  small.form-text.text-muted(v-else) 請先填寫表單讓系統生成您的專屬連結。
+
+block vue-config
+  script.
+    const cfg = window.vueConfig
+    _.set(cfg, 'data.vcard', {
+      originalContentUrl: 'https://storage.googleapis.com/feature-dev/line_crm/videos/67/b7/5c/67b75c7c59fdc44baf956950e0127027.mp4',
+      previewImageUrl: 'https://i.ibb.co/q3NKmcRr/snorlax-psyduck.jpg',
+      template: '#{baseurl}cards/aitago-video-1.txt',
+    })
+    cfg.computed = {
+      ...cfg.computed,
+      shortcut () {
+        const params = window.httpBuildQuery({
+          template: window.encodeBase64url(this.vcard.template),
+          json5gzip: window.encodeGzip(JSON5.stringify(window.beautifyFlex(_.omit(this.vcard, ['template'])))),
+        })
+        if (!_.isString(params) || !params.length) return
+        return `https://liff.line.me/#{liffidFull}/share-json5gzip.html?${params}`
+      },
+    }
+

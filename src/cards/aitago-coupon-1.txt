@@ -1,0 +1,132 @@
+<%
+function gaScreenView (vcard) {
+  const TEMPLATE_NAME = 'AiTAGO Coupon'
+  let hash = CryptoJS.HmacMD5(JSON.stringify(vcard), TEMPLATE_NAME)
+  hash = CryptoJS.enc.Base64.stringify(hash).replace(/[+/=]/g, c => _.get({ '+': '-', '/': '_', '=': '' }, c))
+  return gtag.mpCollectUrl({
+    client_id: gtagClientId,
+    events: [{
+      name: 'template_impression',
+      params: {
+        session_id: gtagSessionId,
+        share_by: profile.userId ?? 'unknown',
+        template_name: TEMPLATE_NAME,
+        vcard_hash: hash,
+        vcard_name: vcard.title || 'AiTAGO Coupon',
+      },
+    }],
+  })
+}
+%>
+
+{
+  "altText": ${JSON.stringify(vcard.altText || 'AiTAGO 折扣碼訊息')},
+  "type": "flex",
+  "contents": {
+    "size": "giga",
+    "type": "bubble",
+    "hero": {
+      "aspectMode": "cover",
+      "aspectRatio": "20:13",
+      "size": "full",
+      "type": "image",
+      "url": ${JSON.stringify(vcard.hero)}
+    },
+    "body": {
+      "layout": "vertical",
+      "paddingAll": "20px",
+      "spacing": "md",
+      "type": "box",
+      "contents": [
+        {
+          "color": ${JSON.stringify(vcard.titleColor || '#133CB6')},
+          "size": "xl",
+          "text": ${JSON.stringify(vcard.title)},
+          "type": "text",
+          "weight": "bold",
+          "wrap": true
+        },
+        {
+          "size": "md",
+          "text": ${JSON.stringify(vcard.desc)},
+          "type": "text",
+          "wrap": true
+        },
+        {
+          "layout": "vertical",
+          "margin": "lg",
+          "spacing": "sm",
+          "type": "box",
+          "contents": [
+            {
+              "size": "sm",
+              "text": ${JSON.stringify(vcard.couponLabel || '優惠碼')},
+              "type": "text",
+              "color": "#666666"
+            },
+            {
+              "color": "#FF0000",
+              "size": "lg",
+              "text": ${JSON.stringify(vcard.coupon)},
+              "type": "text",
+              "weight": "bold",
+              "decoration": "underline",
+              "wrap": true
+            }
+          ]
+        },
+        {
+          "height": "1px",
+          "layout": "vertical",
+          "offsetStart": "0px",
+          "offsetTop": "0px",
+          "position": "absolute",
+          "type": "box",
+          "width": "1px",
+          "contents": [
+            {
+              "align": "center",
+              "aspectMode": "cover",
+              "aspectRatio": "1:1",
+              "gravity": "center",
+              "size": "full",
+              "type": "image",
+              "url": ${JSON.stringify(gaScreenView(vcard))}
+            }
+          ]
+        }
+      ]
+    },
+    "footer": {
+      "layout": "vertical",
+      "spacing": "sm",
+      "type": "box",
+      "contents": [
+        {
+          "action": {
+            "label": "action",
+            "type": "uri",
+            "uri": ${JSON.stringify(_.trim(vcard.link))}
+          },
+          "color": ${JSON.stringify(vcard.buttonColor || '#133CB6')},
+          "height": "sm",
+          "style": "primary",
+          "text": ${JSON.stringify(vcard.buttonText || '前往使用')},
+          "type": "button"
+        },
+        {
+          "action": {
+            "label": "Share - 分享",
+            "type": "uri",
+            "uri": ${JSON.stringify(liffLink)}
+          },
+          "color": "#0000ff",
+          "height": "sm",
+          "style": "primary",
+          "type": "button"
+        }
+      ]
+    }
+  }
+}
+

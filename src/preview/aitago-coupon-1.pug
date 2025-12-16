@@ -1,0 +1,137 @@
+extends /layout/default
+
+block beforehtml
+  -
+    title = 'AiTAGO 折扣碼模板預覽'
+    description = '折扣碼模板完整預覽'
+
+block style
+  style
+    :sass
+      body
+        background: #f5f5f5
+        padding: 20px
+      .preview-container
+        max-width: 400px
+        margin: 0 auto
+        background: white
+        border-radius: 8px
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1)
+        padding: 20px
+      #flex2html
+        width: 100%
+
+block content
+  include /component/navbar
+  .preview-container
+    h3.text-center.mb-4 AiTAGO 折扣碼模板預覽
+    #flex2html
+
+block script
+  script(crossorigin="anonymous", src="https://cdn.jsdelivr.net/gh/PamornT/flex2html@main/js/flex2html.min.js")
+  link(rel="stylesheet", href="https://cdn.jsdelivr.net/gh/PamornT/flex2html@main/css/flex2html.css")
+  script.
+    (async () => {
+      try {
+        // 使用預設的折扣碼模板資料
+        const bubbleJson = {
+          type: 'bubble',
+          size: 'giga',
+          hero: {
+            type: 'image',
+            url: 'https://storage.googleapis.com/feature-dev/line_crm/images/31/d2/9b/31d29b8ca5bb1c1c26bccc8f13121202.png',
+            size: 'full',
+            aspectRatio: '20:13',
+            aspectMode: 'cover'
+          },
+          body: {
+            type: 'box',
+            layout: 'vertical',
+            contents: [
+              {
+                type: 'text',
+                text: '歡迎領取優惠碼',
+                weight: 'bold',
+                size: 'xl',
+                color: '#133CB6',
+                wrap: true
+              },
+              {
+                type: 'text',
+                text: '憑優惠碼至官網消費可享 9 折優惠~',
+                size: 'md',
+                wrap: true
+              },
+              {
+                type: 'box',
+                layout: 'vertical',
+                margin: 'lg',
+                spacing: 'sm',
+                contents: [
+                  {
+                    type: 'text',
+                    text: '優惠碼',
+                    size: 'sm',
+                    color: '#666666'
+                  },
+                  {
+                    type: 'text',
+                    text: 'LINE999',
+                    weight: 'bold',
+                    size: 'lg',
+                    color: '#FF0000',
+                    decoration: 'underline',
+                    wrap: true
+                  }
+                ]
+              }
+            ],
+            paddingAll: '20px',
+            spacing: 'md'
+          },
+          footer: {
+            type: 'box',
+            layout: 'vertical',
+            spacing: 'sm',
+            contents: [
+              {
+                type: 'button',
+                action: {
+                  type: 'uri',
+                  label: '前往使用',
+                  uri: 'https://example.com'
+                },
+                style: 'primary',
+                height: 'sm',
+                color: '#133CB6'
+              },
+              {
+                type: 'button',
+                action: {
+                  type: 'uri',
+                  label: 'Share - 分享',
+                  uri: 'https://liff.line.me/1234567890-abcdefgh/share.html'
+                },
+                style: 'primary',
+                height: 'sm',
+                color: '#0000ff'
+              }
+            ]
+          }
+        }
+        
+        // 構建完整的 Flex Message 格式
+        const flexMessage = {
+          type: 'flex',
+          altText: 'AiTAGO 折扣碼訊息',
+          contents: bubbleJson
+        }
+        
+        // 使用 flex2html 渲染
+        window.flex2html('flex2html', flexMessage)
+      } catch (err) {
+        console.error('預覽載入失敗:', err)
+        document.getElementById('flex2html').innerHTML = '<p class="text-danger">預覽載入失敗：' + err.message + '</p>'
+      }
+    })()
+

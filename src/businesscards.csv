@@ -1,4 +1,6 @@
 form,name,author,lang,preview,description
+forms/aitago-coupon-1.html,AiTAGO 折扣碼模板,aitago,zh_TW,https://i.ibb.co/xq0z9FwF/coupon.jpg,快速分享折扣碼的 Flex Message 模板
+forms/aitago-video-1.html,AiTAGO 影片訊息模板,aitago,zh_TW,https://i.ibb.co/q3NKmcRr/snorlax-psyduck.jpg,影片訊息模板，含影片與預覽圖
 forms/psprint-3949.html,Right Align,taichunmin,zh_TW,https://i.imgur.com/tUvhifE.png,來自 PsPrint 的樣板，上面有連結可以開啟，很適合用來製作個人名片！
 forms/chatgpt-1.html,ChatGPT 問與答,taichunmin,zh_TW,https://i.imgur.com/0uU5aCG.png,讓你在 LINE 中模擬 ChatGPT 的問答畫面！上面有開啟自訂連結及再次分享的按鈕。
 forms/json5.html,JSON5,taichunmin,zh_TW,https://i.imgur.com/ci4T6xG.png,提供給有程式背景的開發者使用，可以使用 JSON5 API 來當作樣版的資料來源。
