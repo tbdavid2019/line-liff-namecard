@@ -120,3 +120,6 @@ dist
 # mkcert
 /mkcert/**
 !/mkcert/.gitkeep
+
+# git worktree for gh-pages deployment
+.gh-pages-tmp
