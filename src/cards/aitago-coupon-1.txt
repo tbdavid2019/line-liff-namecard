@@ -104,14 +104,13 @@ function gaScreenView (vcard) {
       "contents": [
         {
           "action": {
-            "label": "action",
+            "label": ${JSON.stringify(vcard.buttonText || '前往使用')},
             "type": "uri",
             "uri": ${JSON.stringify(_.trim(vcard.link))}
           },
           "color": ${JSON.stringify(vcard.buttonColor || '#133CB6')},
           "height": "sm",
           "style": "primary",
-          "text": ${JSON.stringify(vcard.buttonText || '前往使用')},
           "type": "button"
         },
         {
