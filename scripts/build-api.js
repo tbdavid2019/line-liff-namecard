@@ -160,8 +160,22 @@ async function buildApi() {
                     title: name,
                     description,
                     template: 'Flex Message',
-                    cover: preview
+                    cover: preview,
+                    source: `api/flex/source/${id}.txt`,
+                    sample: `api/flex/sample/${id}.json`
                 })
+
+                // Write Raw Template Source
+                const distSourceDir = path.join(projectRoot, 'dist', 'api', 'flex', 'source')
+                fs.mkdirSync(distSourceDir, { recursive: true })
+                fs.writeFileSync(path.join(distSourceDir, `${id}.txt`), templateContent)
+                debug(`Generated: source/${id}.txt`)
+
+                // Write Sample Data (VCard)
+                const distSampleDir = path.join(projectRoot, 'dist', 'api', 'flex', 'sample')
+                fs.mkdirSync(distSampleDir, { recursive: true })
+                fs.writeFileSync(path.join(distSampleDir, `${id}.json`), JSON.stringify(vcard, null, 2))
+                debug(`Generated: sample/${id}.json`)
             } catch (err) {
                 debug(`Generated invalid JSON for ${id}: ${err.message}`)
             }

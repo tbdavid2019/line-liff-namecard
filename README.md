@@ -86,10 +86,25 @@ rm -rf .gh-pages-tmp && git worktree prune && ./scripts/deploy-gh-pages.sh
 ## Static API 服務
 本專案即使部署在靜態網站（GitHub Pages），也能提供 RESTful API 風格的 JSON 服務，供開發者獲取 Flex Message 的原始結構。
 
-- **API 列表**： `GET /api/flex/template/list.json` (取得所有可用樣板的清單)
-- **單一樣板**： `GET /api/flex/template/{id}.json` (取得指定樣板的 Flex JSON)
+- **API 列表**： `GET /api/flex/template/list.json`
+- **單一樣板 (Rendered)**： `GET /api/flex/template/{id}.json`
+- **原始模板 (Raw Source)**： `GET /api/flex/source/{id}.txt` (Lodash Template)
+- **資料範本 (Sample Data)**： `GET /api/flex/sample/{id}.json` (Available fields)
 
-例如：
+### 進階用法：動態渲染
+由於本站為靜態託管，無法由伺服器帶入參數渲染。
+若您需要動態產生內容，請呼叫 **原始模板 API** 取得 `.txt` 程式碼，並在您的應用程式中（Client-side 或 Server-side）結合 **資料範本** 進行渲染。
+
+例如取得 `ticket-movie.txt` 後，使用 lodash template：
+```javascript
+const template = _.template(txtContent); // txtContent 來自 source API
+const json = template({
+  vcard: {
+    title: "My Movie",
+    date: "2023/12/31"
+  }
+});
+```
 ```
 GET /api/flex/template/announcer-announcement.json
 ```
