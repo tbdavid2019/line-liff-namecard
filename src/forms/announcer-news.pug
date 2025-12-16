@@ -1,0 +1,52 @@
+extends /layout/forms
+
+block beforehtml
+  -
+    title = 'Announcer - News'
+    description = '類似新聞的圖文排版，適合分享文章或最新消息。'
+
+block meta
+  meta(property="og:image:height", content="640")
+  meta(property="og:image:width", content="1280")
+  meta(property="og:image", content="https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png")
+  meta(property="og:url", content=baseurl + "forms/announcer-template-4.html")
+
+block form
+  .form-group.was-validated.my-2
+    label(for="vcard-tag") 標籤 (Tag)
+    input#vcard-tag.form-control.form-control-sm(type="text", required, pattern=".+", v-model="vcard.tag")
+
+  .form-group.was-validated.my-2
+    label(for="vcard-description") 新聞摘要 (Description)
+    textarea#vcard-description.form-control.form-control-sm(required, v-model="vcard.description", rows="3")
+
+  .form-group.was-validated.my-2
+    label(for="vcard-date") 日期 (Date)
+    input#vcard-date.form-control.form-control-sm(type="text", v-model="vcard.date")
+
+  .form-group.was-validated.my-2
+    label(for="vcard-image") 圖片網址 (Image URL)
+    input#vcard-image.form-control.form-control-sm(type="url", required, pattern="https://\\S+", v-model.trim="vcard.image")
+
+  .form-group.was-validated.my-2
+    label(for="vcard-link") 文章連結 (Link URL)
+    input#vcard-link.form-control.form-control-sm(type="url", required, pattern="https://\\S+", v-model.trim="vcard.link")
+
+  hr.my-4
+  h5 獨立分享連結
+  .input-group.my-2
+    input.form-control.form-control-sm(type="text", readonly, :value="shortcut || ''")
+    .input-group-append
+      button.btn.btn-outline-secondary(type="button", @click="btnCopy(shortcut)", :disabled="!shortcut") 複製
+  small.form-text.text-muted(v-if="shortcut") 此連結已包含目前表單資料，分享或收藏後可直接開啟 LIFF 使用。
+
+block vue-config
+  script.
+    window.vueConfig.data.vcard = {
+      image: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png',
+      date: '2023.12.16',
+      description: '【重要通知】API 服務維護公告',
+      link: 'https://github.com/tbdavid2019/liff-businesscard',
+      tag: 'News',
+      template: '#{baseurl}cards/announcer-news.txt',
+    }

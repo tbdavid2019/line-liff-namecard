@@ -1,0 +1,53 @@
+extends /layout/forms
+
+block beforehtml
+  -
+    title = 'Announcer - Card'
+    description = '展示個人或商品卡片，包含圓形頭像、背景圖與按鈕。'
+
+block meta
+  meta(property="og:image:height", content="640")
+  meta(property="og:image:width", content="1280")
+  meta(property="og:image", content="https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png")
+  meta(property="og:url", content=baseurl + "forms/announcer-template-3.html")
+
+block form
+  .form-group.was-validated.my-2
+    label(for="vcard-title") 標題/名稱 (Title)
+    input#vcard-title.form-control.form-control-sm(type="text", required, pattern=".+", v-model="vcard.title")
+
+  .form-group.was-validated.my-2
+    label(for="vcard-description") 描述/副標 (Description)
+    textarea#vcard-description.form-control.form-control-sm(v-model="vcard.description", rows="2")
+
+  .form-group.was-validated.my-2
+    label(for="vcard-avatar") 頭像網址 (Avatar URL)
+    input#vcard-avatar.form-control.form-control-sm(type="url", required, pattern="https://\\S+", v-model.trim="vcard.avatar")
+    small.form-text.text-muted 方形圖片，系統會自動裁切為圓形。
+
+  .form-group.was-validated.my-2
+    label(for="vcard-back") 背景網址 (Background URL)
+    input#vcard-back.form-control.form-control-sm(type="url", required, pattern="https://\\S+", v-model.trim="vcard.back")
+  
+  .form-group.was-validated.my-2
+    label(for="vcard-followUrl") 按鈕連結 (Action URL)
+    input#vcard-followUrl.form-control.form-control-sm(type="url", required, pattern="https://\\S+", v-model.trim="vcard.followUrl")
+
+  hr.my-4
+  h5 獨立分享連結
+  .input-group.my-2
+    input.form-control.form-control-sm(type="text", readonly, :value="shortcut || ''")
+    .input-group-append
+      button.btn.btn-outline-secondary(type="button", @click="btnCopy(shortcut)", :disabled="!shortcut") 複製
+  small.form-text.text-muted(v-if="shortcut") 此連結已包含目前表單資料，分享或收藏後可直接開啟 LIFF 使用。
+
+block vue-config
+  script.
+    window.vueConfig.data.vcard = {
+      title: 'David Tsai',
+      description: '全端工程師\n熱愛開源專案與新技術',
+      avatar: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png',
+      back: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png',
+      followUrl: 'https://github.com/tbdavid2019',
+      template: '#{baseurl}cards/announcer-card.txt',
+    }

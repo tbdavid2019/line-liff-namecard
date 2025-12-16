@@ -1,0 +1,71 @@
+{
+  "type": "flex",
+  "altText": ${JSON.stringify(vcard.description || 'News')},
+  "contents": {
+    "type": "bubble",
+    "size": "micro",
+    "hero": {
+      "type": "image",
+      "url": ${JSON.stringify(vcard.image)},
+      "size": "full",
+      "aspectMode": "cover",
+      "aspectRatio": "320:213",
+      "action": {
+        "type": "uri",
+        "uri": ${JSON.stringify(vcard.link)}
+      }
+    },
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": ${JSON.stringify(vcard.tag || 'News')},
+          "weight": "bold",
+          "color": "#1DB446",
+          "size": "sm"
+        },
+        {
+          "type": "text",
+          "text": ${JSON.stringify(vcard.description || '')},
+          "weight": "bold",
+          "size": "sm",
+          "margin": "md",
+          "wrap": true,
+          "maxLines": 2
+        },
+        {
+          "type": "text",
+          "text": ${JSON.stringify(vcard.date || '')},
+          "size": "xs",
+          "color": "#aaaaaa",
+          "margin": "xs",
+          "align": "end"
+        }
+      ],
+      "action": {
+        "type": "uri",
+        "uri": ${JSON.stringify(vcard.link)}
+      },
+      "paddingAll": "13px"
+    },
+    "footer": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+         {
+          "type": "button",
+          "action": {
+            "type": "uri",
+            "label": "Share",
+            "uri": ${JSON.stringify(liffLink)}
+          },
+          "height": "sm",
+          "style": "link",
+          "margin": "sm"
+        }
+      ]
+    }
+  }
+}

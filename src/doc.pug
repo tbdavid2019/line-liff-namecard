@@ -1,0 +1,77 @@
+extends /layout/default
+
+block beforehtml
+  -
+    title = 'API 文件 | Line Business Card'
+    description = 'API Documentation for Static Flex Templates'
+
+block content
+  include /component/navbar
+  #app.container.my-4(v-cloak)
+    h1.mb-4 API 文件
+    p.lead 這裡列出了所有可用的 Static API 接口。由於是 GitHub Pages 託管，所有接口皆為 GET 唯讀請求。
+
+    .card.mb-3
+      .card-header.bg-dark.text-white
+        strong GET
+        span.ml-2 /api/flex/template/:id.json
+      .card-body
+        p 取得指定 ID 的 Flex Message JSON 資料。
+        h5 Parameters
+        ul
+          li
+            code :id
+            |  - 樣板 ID (例如: 1, 2, 3...)
+        
+        h5 Responses
+        .bg-light.p-3.border.rounded
+          pre.mb-0
+            code.json
+              | {
+              |   "type": "flex",
+              |   "altText": "...",
+              |   "contents": { ... }
+              | }
+
+    hr.my-5
+    
+    h3 Try it out
+    .form-group
+      label(for="templateId") Template ID
+      select.form-control#templateId(v-model="selectedId")
+        option(v-for="t in templates" :value="t.id") {{ t.id }} - {{ t.title }}
+    
+    button.btn.btn-primary(@click="fetchJson") 發送請求 (Execute)
+
+    .mt-3(v-if="result")
+      h5 Response Code: 200
+      pre.bg-dark.text-light.p-3.rounded {{ result }}
+
+block script
+  script.
+    new Vue({
+      el: '#app',
+      data: {
+        baseurl: '#{baseurl}',
+        templates: [],
+        selectedId: '1',
+        result: ''
+      },
+      async mounted() {
+        try {
+          const res = await axios.get('#{baseurl}api/flex/template/list.json')
+          this.templates = res.data
+        } catch (e) { console.error(e) }
+      },
+      methods: {
+        async fetchJson() {
+          try {
+            this.result = 'Loading...'
+            const res = await axios.get(`${this.baseurl}api/flex/template/${this.selectedId}.json`)
+            this.result = JSON.stringify(res.data, null, 2)
+          } catch (err) {
+            this.result = 'Error: ' + err.message
+          }
+        }
+      }
+    })

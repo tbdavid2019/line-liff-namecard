@@ -18,6 +18,7 @@
     "dotenv": "^16.4.7",
     "fast-glob": "^3.3.3",
     "html-minifier": "^4.0.0",
+    "json5": "^2.2.3",
     "jstransformer-sass": "^1.0.0",
     "lodash": "^4.17.21",
     "ncp": "^2.0.0",

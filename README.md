@@ -68,17 +68,88 @@ rm -rf .gh-pages-tmp && git worktree prune && ./scripts/deploy-gh-pages.sh
    - 建立/更新 `gh-pages` 分支（git worktree），將 `dist/` 複製過去並推送
 3. 到 GitHub Repo Settings → Pages，來源選 `gh-pages` 分支（root）。
 
-## Flex 模板在哪、怎麼新增
+## Flex 模板與樣式整合
+本專案整合了 `louis70109/Announcer` 的 Flex Message 樣板，提供多樣化的訊息展示效果。
 
-- Flex Message 範本：`src/cards/*.txt`（文字版），另有 `src/json5/*.json5`（方便編輯的 JSON5 版）。
-- 介面頁面（表單）：`src/forms/*.pug`，會把填寫內容組成訊息並指向對應模板。
+### 現有樣板列表
+所有的樣板都位於 `src/forms/` (表單) 與 `src/cards/` (Layout)。
+您可以在首頁直接點選「建立名片」來使用這些樣板。
 
-新增模板流程：
+- **公告樣板 (Announcement)**：活動公告專用，包含圖片、時間、地點與詳細說明。
+- **名單樣板 (Staff List)**：適合展示團隊成員、營業時間或其他清單資訊。
+- **卡片樣板 (Card)**：展示個人或商品卡片，包含圓形頭像、背景圖與按鈕。
+- **新聞樣板 (News)**：類似新聞的圖文排版，適合分享文章或最新消息。
+- 以及原有樣板 (PsPrint, ChatGPT, Google Sheet, etc.)
 
-1. 複製一份相近的 `src/cards/*.txt`，修改為新的 Flex JSON（可沿用原有 `<% %>` 動態變數，如 `liffLink` 等）。
-2. 如果需要 JSON5 方便維護，依照 `src/json5/line-carousel-1.json5` 再新增一個檔案。
-3. 要讓使用者在前端介面選用/填寫，新增或修改對應的表單頁於 `src/forms/`，必要的文案可加在 `i18n/`。
-4. 執行 `pnpm dev`（即時）或 `pnpm build`（正式），生成後在 `dist/` 預覽確認。
+---
+
+## Static API 服務
+本專案即使部署在靜態網站（GitHub Pages），也能提供 RESTful API 風格的 JSON 服務，供開發者獲取 Flex Message 的原始結構。
+
+- **API 列表**： `GET /api/flex/template/list.json` (取得所有可用樣板的清單)
+- **單一樣板**： `GET /api/flex/template/{id}.json` (取得指定樣板的 Flex JSON)
+
+例如：
+```
+GET /api/flex/template/announcer-announcement.json
+```
+回傳：
+```json
+{
+  "type": "flex",
+  "altText": "公告標題...",
+  "contents": { ... }
+}
+```
+*註：API 回傳的是該樣板的「預設內容」，其中的變數（如圖片、連結）為預設值。*
+
+---
+
+## 如何新增自訂模板
+若要加入新的樣板，請遵循以下「**表單 + 模板**」的模式：
+
+1. **建立模板 (Template Layout)**
+   在 `src/cards/` 新增 `.txt` 檔案（例如 `my-new-template.txt`）。
+   內容為 Flex Message JSON，可使用 Lodash Template 語法 `<% ... %>` 或 `${vcard.title}` 來插入變數。
+   ```javascript
+   {
+     "type": "flex",
+     "contents": {
+       "type": "bubble",
+       "body": {
+         "type": "box",
+         "layout": "vertical",
+         "contents": [
+           { "type": "text", "text": ${JSON.stringify(vcard.title)} }
+         ]
+       }
+     }
+   }
+   ```
+
+2. **建立表單 (Editor Form)**
+   在 `src/forms/` 新增 `.pug` 檔案（例如 `my-new-template.pug`）。
+   - 繼承 `/layout/forms`。
+   - 定義輸入欄位 (`input(v-model="vcard.title")`)。
+   - 設定 `window.vueConfig.data.vcard` 的預設值，並指定 `template` 路徑：
+     ```javascript
+     window.vueConfig.data.vcard = {
+       title: '預設標題',
+       template: '#{baseurl}cards/my-new-template.txt',
+     }
+     ```
+
+3. **註冊到列表**
+   編輯 `src/businesscards.csv`，加入一行新的設定：
+   ```csv
+   forms/my-new-template.html,我的新樣板,作者名,zh_TW,封面圖URL,描述
+   ```
+
+4. **建置**
+   執行 `npm run build`。系統會自動：
+   - 生成表單頁面 (`dist/forms/my-new-template.html`)。
+   - 生成 API JSON (`dist/api/flex/template/my-new-template.json`)。
+   - 更新首頁列表。
 
 
 ## 致謝
