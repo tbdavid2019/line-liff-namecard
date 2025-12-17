@@ -3,7 +3,7 @@ name: github pages
 on:
   workflow_dispatch:
   push:
-    branches: [ master ]
+    branches: [ main ]
 
 permissions:
   contents: read
@@ -23,13 +23,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: latest
-          cache: yarn
+          node-version: lts/*
+          cache: pnpm
       - name: 編譯網頁
         env:
           BASEURL: ${{ secrets.BASEURL }}
@@ -37,8 +39,8 @@ jobs:
           LIFFID_SHARE_CSV: ${{ secrets.LIFFID_SHARE_CSV }}
           LIFFID_SHARE: ${{ secrets.LIFFID_SHARE }}
         run: |
-          yarn
-          yarn build
+          pnpm install
+          pnpm build
       - name: 建立 CNAME 檔案
         shell: bash
         run: '[[ -z "$CNAME" ]] || echo $CNAME > dist/CNAME'
