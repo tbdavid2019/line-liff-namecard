@@ -46,9 +46,21 @@ html
       h2.my-3.text-center= title
       block form
       .row.mx-n2.my-2.d-flex
+        button.btn.btn-info.flex-fill.mx-2.my-1(type="button", @click="btnPreviewFlex") #[i.fa.mr-2.fa-eye] 生成 Flex JSON
         button.btn.btn-danger.flex-fill.mx-2.my-1(type="button", @click="btnReset") #[i.fa.mr-2.fa-repeat] 重設表單
         button.btn.btn-info.flex-fill.mx-2.my-1(type="button", @click="btnExport") #[i.fa.mr-2.fa-code] 匯出匯入
         button.btn.btn-primary.flex-fill.mx-2.my-1(type="button", @click="btnCreateCard", :disabled="!shortcut") #[i.fa.mr-2.fa-id-card-o] 建立名片
+      #modal-preview-flex.modal.fade(data-backdrop="static", data-keyboard="false", tabindex="-1", ref="modalPreviewFlex")
+        .modal-dialog.modal-dialog-centered.modal-xl
+          .modal-content
+            .modal-header
+              h5.modal-title Flex Message JSON（可貼到 #[a(target="_blank", href="https://developers.line.biz/flex-simulator/") LINE Flex Message Simulator]）
+            .modal-body
+              textarea.form-control.form-control-sm.flex-fill(v-model="previewFlexJson", rows="15", style="font-family: monospace; font-size: 12px;")
+            .modal-footer
+              button.btn.btn-outline-success(type="button", @click="btnCopy(previewFlexJson, $refs['modalPreviewFlex'])") 複製 JSON
+              button.btn.btn-secondary(type="button", @click="jqModal('modalPreviewFlex', 'hide')") 關閉
+              a.btn.btn-primary(target="_blank", :href="'https://developers.line.biz/flex-simulator/?input=' + encodeURIComponent(previewFlexJson)", :disabled="!previewFlexJson") 開啟 Simulator
       #modal-exportimport.modal.fade(data-backdrop="static", data-keyboard="false", tabindex="-1", ref="modalExportImport")
         .modal-dialog.modal-dialog-centered.modal-xl.align-items-stretch
           .modal-content
@@ -83,6 +95,7 @@ html
             text: '',
             visible: false,
           },
+          previewFlexJson: '',
         },
         async mounted () {
           try {
@@ -150,6 +163,7 @@ html
             this.$set(this, 'vcard', imported)
           },
           async btnCopy (text, container = null) {
+            if (!text) return
             if (!container) container = document.body
             const dom = document.createElement('textarea')
             dom.value = text
@@ -159,6 +173,48 @@ html
             document.execCommand('copy')
             container.removeChild(dom)
             await Swal.fire({ icon: 'success', title: '複製成功' })
+          },
+          async btnPreviewFlex () {
+            try {
+              if (!this.vcard.template) throw new Error('此樣板未設定 template 路徑')
+
+              // Fetch the raw template
+              const templateRes = await axios.get(this.vcard.template)
+              const templateContent = templateRes.data
+
+              // Prepare context (mocking server-side build environment)
+              const context = {
+                vcard: this.vcard,
+                liffLink: 'https://liff.line.me/1234567890-abcdefgh/share.html',
+                _: window._,
+                JSON: window.JSON,
+                dayjs: window.dayjs,
+                CryptoJS: window.CryptoJS,
+                gtagClientId: 'mock-client-id',
+                gtagSessionId: 'mock-session-id',
+                profile: { userId: 'mock-user-id' },
+                gtag: {
+                  mpCollectUrl: () => 'https://www.google-analytics.com/collect?mock=true'
+                }
+              }
+
+              // Compile and render
+              const compiled = _.template(templateContent)
+              let jsonStr = compiled(context)
+
+              // Parse and stringify to format and validate JSON
+              const jsonObj = JSON5.parse(jsonStr)
+              jsonStr = JSON.stringify(jsonObj, null, 2)
+              
+              // Remove non-standard whitespace
+              jsonStr = jsonStr.replace(/[\u00A0\u2000-\u200B\u202F\u205F\u3000]/g, ' ')
+
+              this.previewFlexJson = jsonStr
+              this.jqModal('modalPreviewFlex', 'show')
+            } catch (err) {
+              window.logError({ err })
+              await Swal.fire({ icon: 'error', title: '生成失敗', text: err.message })
+            }
           },
           async btnExport () {
             try {
