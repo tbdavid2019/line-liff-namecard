@@ -1,0 +1,65 @@
+extends /layout/forms
+
+block beforehtml
+  -
+    title = 'Movie Ticket'
+    description = '模擬電影票券或活動入場券，包含 QR Code 區塊。'
+
+block meta
+  meta(property="og:image:height", content="640")
+  meta(property="og:image:width", content="1280")
+  meta(property="og:image", content="https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_3_movie.png")
+  meta(property="og:url", content=baseurl + "forms/ticket-movie.html")
+
+block form
+  .form-group.was-validated.my-2
+    label(for="vcard-title") 標題 (Title)
+    input#vcard-title.form-control.form-control-sm(type="text", required, pattern=".+", v-model="vcard.title")
+    small.form-text.text-muted 例如：電影名稱、活動標題
+
+  .form-group.was-validated.my-2
+    label(for="vcard-rating") 評分 (Rating)
+    input#vcard-rating.form-control.form-control-sm(type="text", v-model="vcard.rating")
+    small.form-text.text-muted 僅顯示文字（星星圖案目前為固定顯示）
+
+  .form-group.was-validated.my-2
+    label(for="vcard-date") 日期時間 (Date)
+    input#vcard-date.form-control.form-control-sm(type="text", v-model="vcard.date")
+
+  .form-group.was-validated.my-2
+    label(for="vcard-place") 地點 (Place)
+    input#vcard-place.form-control.form-control-sm(type="text", v-model="vcard.place")
+
+  .form-group.was-validated.my-2
+    label(for="vcard-seats") 座位/備註 (Seats)
+    input#vcard-seats.form-control.form-control-sm(type="text", v-model="vcard.seats")
+
+  .form-group.was-validated.my-2
+    label(for="vcard-imageUrl") 封面圖 (Hero Image)
+    input#vcard-imageUrl.form-control.form-control-sm(type="url", required, pattern="https://\\S+", v-model.trim="vcard.imageUrl")
+
+  .form-group.was-validated.my-2
+    label(for="vcard-qrcode") QR Code 圖片 (QR Image)
+    input#vcard-qrcode.form-control.form-control-sm(type="url", required, pattern="https://\\S+", v-model.trim="vcard.qrcode")
+
+  hr.my-4
+  h5 獨立分享連結
+  .input-group.my-2
+    input.form-control.form-control-sm(type="text", readonly, :value="shortcut || ''")
+    .input-group-append
+      button.btn.btn-outline-secondary(type="button", @click="btnCopy(shortcut)", :disabled="!shortcut") 複製
+  small.form-text.text-muted(v-if="shortcut") 此連結已包含目前表單資料，分享或收藏後可直接開啟 LIFF 使用。
+
+block vue-config
+  script.
+    window.vueConfig.data.vcard = {
+      title: "BROWN'S ADVENTURE\\nIN MOVIE",
+      rating: '4.0',
+      date: 'Monday 25, 9:00PM',
+      place: '7 Floor, No.3',
+      seats: 'C Row, 18 Seat',
+      imageUrl: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_3_movie.png',
+      qrcode: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/linecorp_code_withborder.png',
+      url: 'https://github.com/tbdavid2019',
+      template: '#{baseurl}cards/ticket-movie.txt',
+    }

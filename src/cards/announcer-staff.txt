@@ -1,0 +1,92 @@
+{
+  "type": "flex",
+  "altText": ${JSON.stringify(vcard.title || 'Staff List')},
+  "contents": {
+    "type": "bubble",
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "text",
+          "text": ${JSON.stringify(vcard.title || 'Title')},
+          "weight": "bold",
+          "size": "xl"
+        },
+        {
+          "type": "text",
+          "text": ${JSON.stringify(vcard.activity || '')},
+          "size": "xs",
+          "color": "#aaaaaa",
+          "margin": "xs"
+        },
+        {
+          "type": "separator",
+          "margin": "md"
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "margin": "md",
+          "spacing": "sm",
+<%
+          const peopleContents = vcard.people.map(p => ({
+            type: 'box',
+            layout: 'horizontal',
+            contents: [
+              {
+                type: 'text',
+                text: p.name || '',
+                size: 'sm',
+                color: '#555555',
+                flex: 1
+              },
+              {
+                type: 'text',
+                text: p.time || '',
+                size: 'sm',
+                color: '#111111',
+                align: 'end',
+                flex: 2
+              }
+            ]
+          }))
+          %>
+          "contents": ${JSON.stringify(peopleContents)}
+        }
+      ]
+    },
+    "footer": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "button",
+          "action": {
+            "type": "uri",
+            "label": "Location",
+            "uri": ${JSON.stringify(vcard.map || 'https://maps.google.com')}
+          }
+        },
+         {
+          "type": "button",
+          "action": {
+            "type": "uri",
+            "label": "Website",
+            "uri": ${JSON.stringify(vcard.url || '')}
+          }
+        },
+        {
+          "type": "button",
+          "style": "link",
+          "height": "sm",
+          "action": {
+            "type": "uri",
+            "label": "SHARE | 分享",
+            "uri": ${JSON.stringify(liffLink)}
+          }
+        }
+      ]
+    }
+  }
+}

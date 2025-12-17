@@ -1,0 +1,85 @@
+{
+  "type": "flex",
+  "altText": ${JSON.stringify(vcard.title || 'Card')},
+  "contents": {
+    "type": "bubble",
+    "body": {
+      "type": "box",
+      "layout": "vertical",
+      "contents": [
+        {
+          "type": "image",
+          "url": ${JSON.stringify(vcard.back || 'https://via.placeholder.com/600')},
+          "size": "full",
+          "aspectMode": "cover",
+          "aspectRatio": "1:1",
+          "gravity": "center"
+        },
+        {
+          "type": "box",
+          "layout": "vertical",
+          "contents": [
+            {
+              "type": "box",
+              "layout": "vertical",
+              "contents": [
+                {
+                  "type": "image",
+                  "url": ${JSON.stringify(vcard.avatar)},
+                  "aspectMode": "cover",
+                  "size": "full"
+                }
+              ],
+              "cornerRadius": "100px",
+              "width": "72px",
+              "height": "72px"
+            },
+            {
+              "type": "text",
+              "text": ${JSON.stringify(vcard.title || 'Name')},
+              "size": "xl",
+              "weight": "bold",
+              "margin": "md"
+            },
+            {
+              "type": "text",
+              "text": ${JSON.stringify(vcard.description || '')},
+              "size": "sm",
+              "color": "#999999",
+              "margin": "xs",
+              "wrap": true
+            },
+            {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "Follow",
+                "uri": ${JSON.stringify(vcard.followUrl || '#')}
+              },
+              "style": "secondary",
+              "margin": "md"
+            },
+             {
+              "type": "button",
+              "action": {
+                "type": "uri",
+                "label": "SHARE | 分享",
+                "uri": ${JSON.stringify(liffLink)}
+              },
+              "style": "link",
+              "margin": "sm"
+            }
+          ],
+          "position": "absolute",
+          "offsetBottom": "0px",
+          "offsetStart": "0px",
+          "offsetEnd": "0px",
+          "backgroundColor": "#ffffffaa",
+          "paddingAll": "20px",
+          "paddingTop": "18px"
+        }
+      ],
+      "paddingAll": "0px"
+    }
+  }
+}

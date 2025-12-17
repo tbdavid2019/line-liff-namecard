@@ -10,6 +10,7 @@ const log = require('debug')('app:index')
 const path = require('path')
 const pug = require('pug')
 const UglifyJS = require('uglify-js')
+const buildApi = require('./scripts/build-api')
 
 exports.build = async () => {
   const sitemapUrls = []
@@ -63,9 +64,9 @@ exports.build = async () => {
     try {
       let html = pug.renderFile(path.resolve(__dirname, 'src', file), PUG_OPTIONS)
       if (PUG_OPTIONS.NODE_ENV === 'production') html = htmlMinifier(html, htmlMinifierOptions)
-      const dist = path.resolve(__dirname, 'dist', file.replace(/\.pug$/, '.html'))
-      await fsPromises.mkdir(path.dirname(dist), { recursive: true })
-      await fsPromises.writeFile(dist, html)
+      const distFile = path.resolve(__dirname, 'dist', file.replace(/\.pug$/, '.html'))
+      await fsPromises.mkdir(path.dirname(distFile), { recursive: true })
+      await fsPromises.writeFile(distFile, html)
       sitemapUrls.push(new URL(file.replace(/\.pug$/, '.html').replace(/index\.html$/, ''), PUG_OPTIONS.baseurl).href)
     } catch (err) {
       _.set(err, 'data.src', `./src/${file}`)
@@ -74,6 +75,9 @@ exports.build = async () => {
     }
   }
   if (pugErrors) throw new Error(`Failed to render ${pugErrors} pug files.`)
+
+  // api
+  await buildApi(path.resolve(__dirname, 'dist'))
 
   // sitemap
   await genSitemap({ baseurl: PUG_OPTIONS.baseurl, dist: path.resolve(__dirname, 'dist'), urls: sitemapUrls })

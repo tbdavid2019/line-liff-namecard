@@ -1,0 +1,116 @@
+extends /layout/default
+
+block beforehtml
+  -
+    title = 'API 文件 | Line Business Card'
+    description = 'API Documentation for Static Flex Templates'
+
+block content
+  include /component/navbar
+  #app.container.my-4(v-cloak)
+    h1.mb-4 API 文件
+    p.lead 這裡列出了所有可用的 Static API 接口。由於是 GitHub Pages 託管，所有接口皆為 GET 唯讀請求。
+
+    .card.mb-3
+      .card-header.bg-dark.text-white
+        strong GET
+        span.ml-2 /api/flex/template/:id.json
+      .card-body
+        p 取得已渲染的 Flex Message JSON (Default)。
+        h5 Parameters
+        ul
+          li: code :id
+            |  - 樣板 ID
+
+    .card.mb-3
+      .card-header.bg-success.text-white
+        strong GET
+        span.ml-2 /api/flex/source/:id.txt
+      .card-body
+        p 取得樣板原始碼 (Lodash Template)，可用於動態渲染。
+        h5 Response Example
+        pre.bg-light.p-2.rounded
+          code
+            | {
+            |   "type": "bubble",
+            |   "body": { "text": ${JSON.stringify(vcard.title)} } 
+            | }
+
+    .card.mb-3
+      .card-header.bg-info.text-white
+        strong GET
+        span.ml-2 /api/flex/sample/:id.json
+      .card-body
+        p 取得對應的資料欄位範本 (Sample Data)。
+        h5 Response Example
+        pre.bg-light.p-2.rounded
+          code
+            | {
+            |   "title": "My Title",
+            |   "date": "2024/01/01"
+            | }
+
+    .alert.alert-warning
+      h5 進階用法：動態渲染
+      p 本站不支援伺服器端渲染。若需動態帶入參數，請：
+      ol
+        li 呼叫 <b>Source API</b> 取得 <code>.txt</code> 樣板字串。
+        li 呼叫 <b>Sample API</b> 確認可用欄位。
+        li 在您的程式中使用 <code>lodash.template</code> 結合資料進行渲染。
+
+    hr.my-5
+    
+    h3 Try it out
+    .form-row
+      .form-group.col-md-8
+        label(for="templateId") Template ID
+        select.form-control#templateId(v-model="selectedId")
+          option(v-for="t in templates" :value="t.id") {{ t.id }} - {{ t.title }}
+      .form-group.col-md-4
+        label(for="apiType") API Type
+        select.form-control#apiType(v-model="apiType")
+          option(value="template") Rendered JSON (template)
+          option(value="source") Raw Source (source)
+          option(value="sample") Sample Data (sample)
+    
+    button.btn.btn-primary(@click="fetchData") 發送請求 (Execute)
+
+    .mt-3(v-if="result")
+      h5 Response
+      pre.bg-dark.text-light.p-3.rounded(style="white-space: pre-wrap;") {{ result }}
+
+block script
+  script.
+    new Vue({
+      el: '#app',
+      data: {
+        baseurl: '#{baseurl}',
+        templates: [],
+        selectedId: '',
+        apiType: 'template',
+        result: ''
+      },
+      async mounted() {
+        try {
+          const res = await axios.get('#{baseurl}api/flex/template/list.json')
+          this.templates = res.data
+          if (this.templates.length) this.selectedId = this.templates[0].id
+        } catch (e) { console.error(e) }
+      },
+      methods: {
+        async fetchData() {
+          try {
+            this.result = 'Loading...'
+            let url = ''
+            if (this.apiType === 'template') url = `${this.baseurl}api/flex/template/${this.selectedId}.json`
+            if (this.apiType === 'source') url = `${this.baseurl}api/flex/source/${this.selectedId}.txt`
+            if (this.apiType === 'sample') url = `${this.baseurl}api/flex/sample/${this.selectedId}.json`
+            
+            const res = await axios.get(url)
+            this.result = typeof res.data === 'object' ? JSON.stringify(res.data, null, 2) : res.data
+          } catch (err) {
+            this.result = 'Error: ' + err.message
+          }
+        }
+      }
+    })
