@@ -1,0 +1,162 @@
+extends /layout/forms
+
+block beforehtml
+  -
+    title = 'LINE Official - Shopping'
+    description = 'LINE 官方購物樣板 (Shopping) Flex Message。'
+
+block meta
+  meta(property="og:image:height", content="640")
+  meta(property="og:image:width", content="1280")
+  meta(property="og:image", content="https://raw.githubusercontent.com/jcyh0120/linebot-flex-message-template/master/official/Shopping.png")
+  meta(property="og:url", content=baseurl + "forms/official-shopping-1.html")
+
+block form
+  .form-group.was-validated.my-2
+    label(for="vcard-altText") 替代文字 (Alt Text)
+    input#vcard-altText.form-control.form-control-sm(type="text", v-model="vcard.altText")
+    small.form-text.text-muted 收到訊息時在通知/無法顯示時會看到的文字。
+
+  hr.my-3
+  h5 商品 1 (Product 1)
+
+  .form-group.was-validated.my-2
+    label(for="vcard-product1Image") 商品 1 圖片網址
+    input#vcard-product1Image.form-control.form-control-sm(type="url", inputmode="url", required, pattern="https://\\S+", v-model.trim="vcard.product1Image")
+    small.form-text.text-muted 請填寫 20:13 比例的圖片網址。
+
+  .form-group.was-validated.my-2
+    label(for="vcard-product1Name") 商品 1 名稱
+    input#vcard-product1Name.form-control.form-control-sm(type="text", required, pattern=".+", v-model="vcard.product1Name")
+
+  .form-row
+    .col-md-6
+      .form-group.was-validated.my-2
+        label(for="vcard-product1Price") 商品 1 價格（整數）
+        input#vcard-product1Price.form-control.form-control-sm(type="text", required, pattern=".+", v-model="vcard.product1Price")
+        small.form-text.text-muted 例如：$49
+    .col-md-6
+      .form-group.was-validated.my-2
+        label(for="vcard-product1PriceDecimal") 商品 1 價格（小數）
+        input#vcard-product1PriceDecimal.form-control.form-control-sm(type="text", v-model="vcard.product1PriceDecimal")
+        small.form-text.text-muted 例如：.99
+
+  .form-row
+    .col-md-6
+      .form-group.was-validated.my-2
+        label(for="vcard-product1Button1Label") 商品 1 按鈕 1 文字
+        input#vcard-product1Button1Label.form-control.form-control-sm(type="text", v-model="vcard.product1Button1Label")
+        small.form-text.text-muted 例如：Add to Cart
+    .col-md-6
+      .form-group.was-validated.my-2
+        label(for="vcard-product1Button1Url") 商品 1 按鈕 1 網址
+        input#vcard-product1Button1Url.form-control.form-control-sm(type="url", inputmode="url", pattern="https://\\S+", v-model.trim="vcard.product1Button1Url")
+
+  .form-row
+    .col-md-6
+      .form-group.was-validated.my-2
+        label(for="vcard-product1Button2Label") 商品 1 按鈕 2 文字
+        input#vcard-product1Button2Label.form-control.form-control-sm(type="text", v-model="vcard.product1Button2Label")
+        small.form-text.text-muted 例如：Add to wishlist
+    .col-md-6
+      .form-group.was-validated.my-2
+        label(for="vcard-product1Button2Url") 商品 1 按鈕 2 網址
+        input#vcard-product1Button2Url.form-control.form-control-sm(type="url", inputmode="url", pattern="https://\\S+", v-model.trim="vcard.product1Button2Url")
+
+  hr.my-3
+  h5 商品 2 (Product 2)
+
+  .form-group.was-validated.my-2
+    label(for="vcard-product2Image") 商品 2 圖片網址
+    input#vcard-product2Image.form-control.form-control-sm(type="url", inputmode="url", required, pattern="https://\\S+", v-model.trim="vcard.product2Image")
+
+  .form-group.was-validated.my-2
+    label(for="vcard-product2Name") 商品 2 名稱
+    input#vcard-product2Name.form-control.form-control-sm(type="text", required, pattern=".+", v-model="vcard.product2Name")
+
+  .form-row
+    .col-md-6
+      .form-group.was-validated.my-2
+        label(for="vcard-product2Price") 商品 2 價格（整數）
+        input#vcard-product2Price.form-control.form-control-sm(type="text", required, pattern=".+", v-model="vcard.product2Price")
+        small.form-text.text-muted 例如：$11
+    .col-md-6
+      .form-group.was-validated.my-2
+        label(for="vcard-product2PriceDecimal") 商品 2 價格（小數）
+        input#vcard-product2PriceDecimal.form-control.form-control-sm(type="text", v-model="vcard.product2PriceDecimal")
+        small.form-text.text-muted 例如：.99
+
+  .form-group.was-validated.my-2
+    label(for="vcard-product2Status") 商品 2 狀態文字（選填）
+    input#vcard-product2Status.form-control.form-control-sm(type="text", v-model="vcard.product2Status")
+    small.form-text.text-muted 例如：Temporarily out of stock（留空則不顯示）
+
+  .form-row
+    .col-md-6
+      .form-group.was-validated.my-2
+        label(for="vcard-product2Button1Label") 商品 2 按鈕 1 文字
+        input#vcard-product2Button1Label.form-control.form-control-sm(type="text", v-model="vcard.product2Button1Label")
+    .col-md-6
+      .form-group.was-validated.my-2
+        label(for="vcard-product2Button1Url") 商品 2 按鈕 1 網址
+        input#vcard-product2Button1Url.form-control.form-control-sm(type="url", inputmode="url", pattern="https://\\S+", v-model.trim="vcard.product2Button1Url")
+
+  .form-row
+    .col-md-6
+      .form-group.was-validated.my-2
+        label(for="vcard-product2Button2Label") 商品 2 按鈕 2 文字
+        input#vcard-product2Button2Label.form-control.form-control-sm(type="text", v-model="vcard.product2Button2Label")
+    .col-md-6
+      .form-group.was-validated.my-2
+        label(for="vcard-product2Button2Url") 商品 2 按鈕 2 網址
+        input#vcard-product2Button2Url.form-control.form-control-sm(type="url", inputmode="url", pattern="https://\\S+", v-model.trim="vcard.product2Button2Url")
+
+  hr.my-3
+  h5 更多按鈕 (See More)
+
+  .form-row
+    .col-md-6
+      .form-group.was-validated.my-2
+        label(for="vcard-seeMoreLabel") 更多按鈕文字
+        input#vcard-seeMoreLabel.form-control.form-control-sm(type="text", v-model="vcard.seeMoreLabel")
+        small.form-text.text-muted 例如：See more
+    .col-md-6
+      .form-group.was-validated.my-2
+        label(for="vcard-seeMoreUrl") 更多按鈕網址
+        input#vcard-seeMoreUrl.form-control.form-control-sm(type="url", inputmode="url", pattern="https://\\S+", v-model.trim="vcard.seeMoreUrl")
+
+  hr.my-4
+  h5 獨立分享連結
+  .input-group.my-2
+    input.form-control.form-control-sm(type="text", readonly, :value="shortcut || ''")
+    .input-group-append
+      button.btn.btn-outline-secondary(type="button", @click="btnCopy(shortcut)", :disabled="!shortcut") 複製
+  small.form-text.text-muted(v-if="shortcut") 此連結已包含目前表單資料，分享或收藏後可直接開啟 LIFF 使用。
+  small.form-text.text-muted(v-else) 請先填寫表單讓系統生成您的專屬連結。
+
+block vue-config
+  script.
+    window.vueConfig.data.vcard = {
+      altText: 'Shopping',
+      product1Image: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_5_carousel.png',
+      product1Name: 'Arm Chair, White',
+      product1Price: '$49',
+      product1PriceDecimal: '.99',
+      product1Button1Label: 'Add to Cart',
+      product1Button1Url: 'https://linecorp.com',
+      product1Button2Label: 'Add to wishlist',
+      product1Button2Url: 'https://linecorp.com',
+      product2Image: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_6_carousel.png',
+      product2Name: 'Metal Desk Lamp',
+      product2Price: '$11',
+      product2PriceDecimal: '.99',
+      product2Status: 'Temporarily out of stock',
+      product2Button1Label: 'Add to Cart',
+      product2Button1Url: 'https://linecorp.com',
+      product2Button2Label: 'Add to wish list',
+      product2Button2Url: 'https://linecorp.com',
+      seeMoreLabel: 'See more',
+      seeMoreUrl: 'https://linecorp.com',
+      template: '#{baseurl}cards/official-shopping-1.txt',
+    }
+

@@ -1,0 +1,130 @@
+extends /layout/forms
+
+block beforehtml
+  -
+    title = 'LINE Official - Menu'
+    description = 'LINE 官方菜單樣板 (Menu) Flex Message。'
+
+block meta
+  meta(property="og:image:height", content="640")
+  meta(property="og:image:width", content="1280")
+  meta(property="og:image", content="https://raw.githubusercontent.com/jcyh0120/linebot-flex-message-template/master/official/Menu.png")
+  meta(property="og:url", content=baseurl + "forms/official-menu-1.html")
+
+block form
+  .form-group.was-validated.my-2
+    label(for="vcard-altText") 替代文字 (Alt Text)
+    input#vcard-altText.form-control.form-control-sm(type="text", v-model="vcard.altText")
+    small.form-text.text-muted 收到訊息時在通知/無法顯示時會看到的文字。
+
+  .form-group.was-validated.my-2
+    label(for="vcard-heroImage") 主圖網址 (Hero Image)
+    input#vcard-heroImage.form-control.form-control-sm(type="url", inputmode="url", required, pattern="https://\\S+", v-model.trim="vcard.heroImage")
+    small.form-text.text-muted 請填寫 20:13 比例的圖片網址。
+
+  .form-group.was-validated.my-2
+    label(for="vcard-heroLink") 主圖點擊連結
+    input#vcard-heroLink.form-control.form-control-sm(type="url", inputmode="url", pattern="https://\\S+", v-model.trim="vcard.heroLink")
+
+  .form-group.was-validated.my-2
+    label(for="vcard-title") 標題 (Title)
+    input#vcard-title.form-control.form-control-sm(type="text", required, pattern=".+", v-model="vcard.title")
+    small.form-text.text-muted 例如：Brown's Burger
+
+  hr.my-3
+  h5 品項 1 (Item 1)
+
+  .form-group.was-validated.my-2
+    label(for="vcard-item1Icon") 品項 1 圖示網址
+    input#vcard-item1Icon.form-control.form-control-sm(type="url", inputmode="url", pattern="https://\\S+", v-model.trim="vcard.item1Icon")
+    small.form-text.text-muted 例如：小份圖示
+
+  .form-row
+    .col-md-6
+      .form-group.was-validated.my-2
+        label(for="vcard-item1Price") 品項 1 價格
+        input#vcard-item1Price.form-control.form-control-sm(type="text", required, pattern=".+", v-model="vcard.item1Price")
+        small.form-text.text-muted 例如：$10.5
+    .col-md-6
+      .form-group.was-validated.my-2
+        label(for="vcard-item1Info") 品項 1 資訊
+        input#vcard-item1Info.form-control.form-control-sm(type="text", v-model="vcard.item1Info")
+        small.form-text.text-muted 例如：400kcl
+
+  hr.my-3
+  h5 品項 2 (Item 2)
+
+  .form-group.was-validated.my-2
+    label(for="vcard-item2Icon") 品項 2 圖示網址
+    input#vcard-item2Icon.form-control.form-control-sm(type="url", inputmode="url", pattern="https://\\S+", v-model.trim="vcard.item2Icon")
+    small.form-text.text-muted 例如：大份圖示
+
+  .form-row
+    .col-md-6
+      .form-group.was-validated.my-2
+        label(for="vcard-item2Price") 品項 2 價格
+        input#vcard-item2Price.form-control.form-control-sm(type="text", required, pattern=".+", v-model="vcard.item2Price")
+        small.form-text.text-muted 例如：$15.5
+    .col-md-6
+      .form-group.was-validated.my-2
+        label(for="vcard-item2Info") 品項 2 資訊
+        input#vcard-item2Info.form-control.form-control-sm(type="text", v-model="vcard.item2Info")
+        small.form-text.text-muted 例如：550kcl
+
+  .form-group.was-validated.my-2
+    label(for="vcard-description") 說明文字 (Description)
+    textarea#vcard-description.form-control.form-control-sm(v-model="vcard.description", rows="2")
+    small.form-text.text-muted 例如：Sauce, Onions, Pickles, Lettuce & Cheese
+
+  hr.my-3
+  h5 按鈕 (Button)
+
+  .form-group.was-validated.my-2
+    label(for="vcard-buttonLabel") 按鈕文字
+    input#vcard-buttonLabel.form-control.form-control-sm(type="text", v-model="vcard.buttonLabel")
+    small.form-text.text-muted 例如：Add to Cart
+
+  .form-group.was-validated.my-2
+    label(for="vcard-buttonUrl") 按鈕網址
+    input#vcard-buttonUrl.form-control.form-control-sm(type="url", inputmode="url", pattern="https://\\S+", v-model.trim="vcard.buttonUrl")
+
+  .form-group.was-validated.my-2
+    label(for="vcard-buttonColor") 按鈕顏色
+    input#vcard-buttonColor.form-control.form-control-sm(type="text", v-model="vcard.buttonColor")
+    small.form-text.text-muted 例如：#905c44（留空使用預設）
+
+  .form-group.was-validated.my-2
+    label(for="vcard-bodyLink") 內容區塊點擊連結（選填）
+    input#vcard-bodyLink.form-control.form-control-sm(type="url", inputmode="url", pattern="https://\\S+", v-model.trim="vcard.bodyLink")
+    small.form-text.text-muted 點擊內容區塊時的連結
+
+  hr.my-4
+  h5 獨立分享連結
+  .input-group.my-2
+    input.form-control.form-control-sm(type="text", readonly, :value="shortcut || ''")
+    .input-group-append
+      button.btn.btn-outline-secondary(type="button", @click="btnCopy(shortcut)", :disabled="!shortcut") 複製
+  small.form-text.text-muted(v-if="shortcut") 此連結已包含目前表單資料，分享或收藏後可直接開啟 LIFF 使用。
+  small.form-text.text-muted(v-else) 請先填寫表單讓系統生成您的專屬連結。
+
+block vue-config
+  script.
+    window.vueConfig.data.vcard = {
+      altText: 'Menu',
+      heroImage: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_2_restaurant.png',
+      heroLink: 'https://linecorp.com',
+      title: "Brown's Burger",
+      item1Icon: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/restaurant_regular_32.png',
+      item1Price: '$10.5',
+      item1Info: '400kcl',
+      item2Icon: 'https://scdn.line-apps.com/n/channel_devcenter/img/fx/restaurant_large_32.png',
+      item2Price: '$15.5',
+      item2Info: '550kcl',
+      description: 'Sauce, Onions, Pickles, Lettuce & Cheese',
+      buttonLabel: 'Add to Cart',
+      buttonUrl: 'https://linecorp.com',
+      buttonColor: '#905c44',
+      bodyLink: 'https://linecorp.com',
+      template: '#{baseurl}cards/official-menu-1.txt',
+    }
+
