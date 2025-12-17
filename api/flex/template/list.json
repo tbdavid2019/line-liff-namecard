@@ -1,5 +1,23 @@
 [
   {
+    "id": "aitago-coupon-1",
+    "title": "AiTAGO 折扣碼模板",
+    "description": "快速分享折扣碼的 Flex Message 模板",
+    "template": "Flex Message",
+    "cover": "https://i.ibb.co/xq0z9FwF/coupon.jpg",
+    "source": "api/flex/source/aitago-coupon-1.txt",
+    "sample": "api/flex/sample/aitago-coupon-1.json"
+  },
+  {
+    "id": "aitago-video-1",
+    "title": "AiTAGO 影片訊息模板",
+    "description": "影片訊息模板，含影片與預覽圖",
+    "template": "Flex Message",
+    "cover": "https://i.ibb.co/q3NKmcRr/snorlax-psyduck.jpg",
+    "source": "api/flex/source/aitago-video-1.txt",
+    "sample": "api/flex/sample/aitago-video-1.json"
+  },
+  {
     "id": "psprint-3949",
     "title": "Right Align",
     "description": "來自 PsPrint 的樣板，上面有連結可以開啟，很適合用來製作個人名片！",

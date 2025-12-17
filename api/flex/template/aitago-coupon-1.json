@@ -1,0 +1,109 @@
+{
+  "altText": "AiTAGO 折扣碼訊息",
+  "type": "flex",
+  "contents": {
+    "size": "giga",
+    "type": "bubble",
+    "hero": {
+      "aspectMode": "cover",
+      "aspectRatio": "20:13",
+      "size": "full",
+      "type": "image",
+      "url": "https://storage.googleapis.com/feature-dev/line_crm/images/31/d2/9b/31d29b8ca5bb1c1c26bccc8f13121202.png"
+    },
+    "body": {
+      "layout": "vertical",
+      "paddingAll": "20px",
+      "spacing": "md",
+      "type": "box",
+      "contents": [
+        {
+          "color": "#133CB6",
+          "size": "xl",
+          "text": "歡迎領取優惠碼",
+          "type": "text",
+          "weight": "bold",
+          "wrap": true
+        },
+        {
+          "size": "md",
+          "text": "憑優惠碼至官網消費可享 9 折優惠~",
+          "type": "text",
+          "wrap": true
+        },
+        {
+          "layout": "vertical",
+          "margin": "lg",
+          "spacing": "sm",
+          "type": "box",
+          "contents": [
+            {
+              "size": "sm",
+              "text": "優惠碼",
+              "type": "text",
+              "color": "#666666"
+            },
+            {
+              "color": "#FF0000",
+              "size": "lg",
+              "text": "LINE999",
+              "type": "text",
+              "weight": "bold",
+              "decoration": "underline",
+              "wrap": true
+            }
+          ]
+        },
+        {
+          "height": "1px",
+          "layout": "vertical",
+          "offsetStart": "0px",
+          "offsetTop": "0px",
+          "position": "absolute",
+          "type": "box",
+          "width": "1px",
+          "contents": [
+            {
+              "align": "center",
+              "aspectMode": "cover",
+              "aspectRatio": "1:1",
+              "gravity": "center",
+              "size": "full",
+              "type": "image",
+              "url": "https://mock-ga-url"
+            }
+          ]
+        }
+      ]
+    },
+    "footer": {
+      "layout": "vertical",
+      "spacing": "sm",
+      "type": "box",
+      "contents": [
+        {
+          "action": {
+            "label": "前往使用",
+            "type": "uri",
+            "uri": "https://example.com"
+          },
+          "color": "#133CB6",
+          "height": "sm",
+          "style": "primary",
+          "type": "button"
+        },
+        {
+          "action": {
+            "label": "Share - 分享",
+            "type": "uri",
+            "uri": "https://liff.line.me/mock-liff-id/share.html"
+          },
+          "color": "#0000ff",
+          "height": "sm",
+          "style": "primary",
+          "type": "button"
+        }
+      ]
+    }
+  }
+}

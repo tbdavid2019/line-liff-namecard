@@ -1,0 +1,6 @@
+{
+  "type": "video",
+  "originalContentUrl": ${JSON.stringify(vcard.originalContentUrl)},
+  "previewImageUrl": ${JSON.stringify(vcard.previewImageUrl)}
+}
+
