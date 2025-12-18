@@ -40,7 +40,7 @@ block content
         a.dropdown-item(target="_blank", href="https://line.me/R/nv/addFriends") #[i.fa.fa-fw.fa-users] {{ $t('dropdown.addFriends') }}
         a.dropdown-item(target="_blank", href="https://line.me/R/nv/keep") #[i.fa.fa-fw.fa-bookmark] {{ $t('dropdown.keep') }}
         a.dropdown-item(target="_blank", href=baseurl+'?openExternalBrowser=1') #[i.fa.fa-fw.fa-address-card] {{ $t('dropdown.create') }}
-        a.dropdown-item(target="_blank", href="https://lihi1.com/CVjIx/liffshare") #[i.fa.fa-fw.fa-comments] {{ $t('dropdown.discuss') }}
+
         button.dropdown-item(type="button", @click="btnFriendMissing") #[i.fa.fa-fw.fa-question-circle] {{ $t('dropdown.friendMissing') }}
     .table-responsive(style="background-color: #849ebf")
       .chatbox.pt-3
@@ -220,7 +220,7 @@ block script
           })
         },
         async swalFire (args) {
-          if (_.isPlainObject(args)) args = { footer: this.$t('swalFooter'), ...args }
+          if (_.isPlainObject(args)) args = { ...args }
           return await Swal.fire(args)
         },
         getRenderedMsgs () {

@@ -1,19 +1,19 @@
 form,name,author,lang,preview,description
-forms/psprint-3949.html,Right Align,taichunmin/liff-businesscard,zh_TW,https://i.imgur.com/tUvhifE.png,來自 PsPrint 的樣板，上面有連結可以開啟，很適合用來製作個人名片！
-forms/chatgpt-1.html,ChatGPT 問與答,taichunmin/liff-businesscard,zh_TW,https://i.imgur.com/0uU5aCG.png,讓你在 LINE 中模擬 ChatGPT 的問答畫面！上面有開啟自訂連結及再次分享的按鈕。
-forms/json5.html,JSON5,taichunmin/liff-businesscard,zh_TW,https://i.imgur.com/ci4T6xG.png,提供給有程式背景的開發者使用，可以使用 JSON5 API 來當作樣版的資料來源。
-forms/line-carousel-1.html,多頁訊息 1,taichunmin/liff-businesscard,zh_TW,https://i.imgur.com/0pbirUY.png,來自 LINE 的樣板，最多 12 張卡片，很適合用來製作廣告傳單。
-forms/psprint-592.html,Corporate Buzz,taichunmin/liff-businesscard,zh_TW,https://i.imgur.com/AjbhMam.png,來自 PsPrint 的樣板，上面有連結可以開啟，很適合用來製作個人名片！
-forms/google-sheet.html,Google Sheet,taichunmin/liff-businesscard,zh_TW,https://i.imgur.com/Jdb68bE.png,從 Google Sheet 讀取名片資料來產生名片
-forms/csv.html,CSV,taichunmin/liff-businesscard,zh_TW,https://i.imgur.com/CU3myIc.png,從 CSV 讀取名片資料來產生名片
-forms/facebook-post-link-1.html,Facebook Post Link,taichunmin/liff-businesscard,zh_TW,https://i.imgur.com/hO0LAHK.png,讓你在 LINE 中模擬 Facebook 分享連結，並且還可再次分享！
-forms/acnh-passport-1.html,動物森友會護照,taichunmin/liff-businesscard,zh_TW,https://i.imgur.com/rGRMSdy.png,「集合吧！動物森友會」的護照
-forms/acnh-postcard-1.html,動物森友會心意卡,taichunmin/liff-businesscard,zh_TW,https://i.imgur.com/gJASJdW.png,來自「集合吧！動物森友會」的心意卡。
-forms/chatbot-tw-1.html,Chatbot 台灣開發者,taichunmin/liff-businesscard,zh_TW,https://i.imgur.com/lEKHcUY.png,「Chatbot Developers Taiwan」的名片
-forms/announcer-announcement.html,公告樣板 (Announcement),louis70109/Announcer,zh_TW,https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png,活動公告專用樣板，包含圖片、時間、地點與詳細說明。
-forms/announcer-staff.html,名單樣板 (Staff List),louis70109/Announcer,zh_TW,https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_2_restaurant.png,適合展示團隊成員、營業時間或其他清單資訊。
-forms/announcer-card.html,卡片樣板 (Card),louis70109/Announcer,zh_TW,https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png,展示個人或商品卡片，包含圓形頭像、背景圖與按鈕。
-forms/announcer-news.html,新聞樣板 (News),louis70109/Announcer,zh_TW,https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png,類似新聞的圖文排版，適合分享文章或最新消息。
+forms/psprint-3949.html,Right Align,david888,zh_TW,https://i.imgur.com/tUvhifE.png,來自 PsPrint 的樣板，上面有連結可以開啟，很適合用來製作個人名片！
+forms/chatgpt-1.html,ChatGPT 問與答,david888,zh_TW,https://i.imgur.com/0uU5aCG.png,讓你在 LINE 中模擬 ChatGPT 的問答畫面！上面有開啟自訂連結及再次分享的按鈕。
+forms/json5.html,JSON5,david888,zh_TW,https://i.imgur.com/ci4T6xG.png,提供給有程式背景的開發者使用，可以使用 JSON5 API 來當作樣版的資料來源。
+forms/line-carousel-1.html,多頁訊息 1,david888,zh_TW,https://i.imgur.com/0pbirUY.png,來自 LINE 的樣板，最多 12 張卡片，很適合用來製作廣告傳單。
+forms/psprint-592.html,Corporate Buzz,david888,zh_TW,https://i.imgur.com/AjbhMam.png,來自 PsPrint 的樣板，上面有連結可以開啟，很適合用來製作個人名片！
+forms/google-sheet.html,Google Sheet,david888,zh_TW,https://i.imgur.com/Jdb68bE.png,從 Google Sheet 讀取名片資料來產生名片
+forms/csv.html,CSV,david888,zh_TW,https://i.imgur.com/CU3myIc.png,從 CSV 讀取名片資料來產生名片
+forms/facebook-post-link-1.html,Facebook Post Link,david888,zh_TW,https://i.imgur.com/hO0LAHK.png,讓你在 LINE 中模擬 Facebook 分享連結，並且還可再次分享！
+forms/acnh-passport-1.html,動物森友會護照,david888,zh_TW,https://i.imgur.com/rGRMSdy.png,「集合吧！動物森友會」的護照
+forms/acnh-postcard-1.html,動物森友會心意卡,david888,zh_TW,https://i.imgur.com/gJASJdW.png,來自「集合吧！動物森友會」的心意卡。
+forms/chatbot-tw-1.html,Chatbot 台灣開發者,david888,zh_TW,https://i.imgur.com/lEKHcUY.png,「Chatbot Developers Taiwan」的名片
+forms/announcer-announcement.html,公告樣板 (Announcement),david888,zh_TW,https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png,活動公告專用樣板，包含圖片、時間、地點與詳細說明。
+forms/announcer-staff.html,名單樣板 (Staff List),david888,zh_TW,https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_2_restaurant.png,適合展示團隊成員、營業時間或其他清單資訊。
+forms/announcer-card.html,卡片樣板 (Card),david888,zh_TW,https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png,展示個人或商品卡片，包含圓形頭像、背景圖與按鈕。
+forms/announcer-news.html,新聞樣板 (News),david888,zh_TW,https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png,類似新聞的圖文排版，適合分享文章或最新消息。
 forms/ticket-movie.html,票券樣板 (Ticket),LINE Official,zh_TW,https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_3_movie.png,模擬電影票券或活動入場券，包含 QR Code 區塊。
 forms/aitago-coupon-1.html,AiTAGO 折扣碼模板,aitago,zh_TW,https://i.ibb.co/xq0z9FwF/coupon.jpg,快速分享折扣碼的 Flex Message 模板
 forms/aitago-video-1.html,AiTAGO 影片訊息模板,aitago,zh_TW,https://i.ibb.co/q3NKmcRr/snorlax-psyduck.jpg,影片訊息模板，含影片與預覽圖

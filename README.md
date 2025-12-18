@@ -167,6 +167,4 @@ GET /api/flex/template/announcer-announcement.json
    - 更新首頁列表。
 
 
-## 致謝
 
-原始專案： https://github.com/taichunmin/liff-businesscard ，感謝作者 taichunmin 的開源分享。

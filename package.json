@@ -2,8 +2,8 @@
   "name": "liff-businesscard",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@github.com:taichunmin/liff-businesscard.git",
-  "author": "taichunmin <taichunmin@gmail.com>",
+  "repository": "git@github.com:tbdavid2019/line-liff-namecard.git",
+  "author": "david888 <david888@gmail.com>",
   "license": "MIT",
   "packageManager": "pnpm@9.12.0",
   "scripts": {
