@@ -1,0 +1,105 @@
+extends /layout/forms
+
+block beforehtml
+  -
+    title = 'LINE Official - Transit'
+    description = 'LINE 官方交通路線樣板 (Transit) Flex Message。'
+
+block meta
+  meta(property="og:image:height", content="640")
+  meta(property="og:image:width", content="1280")
+  meta(property="og:image", content="https://raw.githubusercontent.com/jcyh0120/linebot-flex-message-template/master/official/Transit.png")
+  meta(property="og:url", content=baseurl + "forms/official-transit-1.html")
+
+block form
+  .form-group.was-validated.my-2
+    label(for="vcard-altText") 替代文字 (Alt Text)
+    input#vcard-altText.form-control.form-control-sm(type="text", v-model="vcard.altText")
+    small.form-text.text-muted 收到訊息時在通知/無法顯示時會看到的文字。
+
+  .form-row
+    .col-md-6
+      .form-group.was-validated.my-2
+        label(for="vcard-fromName") 起點 (From)
+        input#vcard-fromName.form-control.form-control-sm(type="text", required, pattern=".+", v-model="vcard.fromName")
+    .col-md-6
+      .form-group.was-validated.my-2
+        label(for="vcard-toName") 終點 (To)
+        input#vcard-toName.form-control.form-control-sm(type="text", required, pattern=".+", v-model="vcard.toName")
+
+  .form-group.was-validated.my-2
+    label(for="vcard-totalTime") 總時間文字 (Total Time)
+    input#vcard-totalTime.form-control.form-control-sm(type="text", v-model="vcard.totalTime")
+    small.form-text.text-muted 例如：Total: 1 hour
+
+  hr.my-3
+  h5 路線節點 (Stops)
+
+  .form-row
+    .col-md-4
+      .form-group.was-validated.my-2
+        label(for="vcard-time1") 時間 1
+        input#vcard-time1.form-control.form-control-sm(type="text", v-model="vcard.time1")
+    .col-md-8
+      .form-group.was-validated.my-2
+        label(for="vcard-station1") 站名 1
+        input#vcard-station1.form-control.form-control-sm(type="text", v-model="vcard.station1")
+
+  .form-group.was-validated.my-2
+    label(for="vcard-walkLabel") 步行說明 (Walk Label)
+    input#vcard-walkLabel.form-control.form-control-sm(type="text", v-model="vcard.walkLabel")
+    small.form-text.text-muted 例如：Walk 4min
+
+  .form-row
+    .col-md-4
+      .form-group.was-validated.my-2
+        label(for="vcard-time2") 時間 2
+        input#vcard-time2.form-control.form-control-sm(type="text", v-model="vcard.time2")
+    .col-md-8
+      .form-group.was-validated.my-2
+        label(for="vcard-station2") 站名 2
+        input#vcard-station2.form-control.form-control-sm(type="text", v-model="vcard.station2")
+
+  .form-group.was-validated.my-2
+    label(for="vcard-metroLabel") 大眾運輸說明 (Metro Label)
+    input#vcard-metroLabel.form-control.form-control-sm(type="text", v-model="vcard.metroLabel")
+    small.form-text.text-muted 例如：Metro 1hr
+
+  .form-row
+    .col-md-4
+      .form-group.was-validated.my-2
+        label(for="vcard-time3") 時間 3
+        input#vcard-time3.form-control.form-control-sm(type="text", v-model="vcard.time3")
+    .col-md-8
+      .form-group.was-validated.my-2
+        label(for="vcard-station3") 站名 3
+        input#vcard-station3.form-control.form-control-sm(type="text", v-model="vcard.station3")
+
+  hr.my-4
+  h5 獨立分享連結
+  .input-group.my-2
+    input.form-control.form-control-sm(type="text", readonly, :value="shortcut || ''")
+    .input-group-append
+      button.btn.btn-outline-secondary(type="button", @click="btnCopy(shortcut)", :disabled="!shortcut") 複製
+  small.form-text.text-muted(v-if="shortcut") 此連結已包含目前表單資料，分享或收藏後可直接開啟 LIFF 使用。
+  small.form-text.text-muted(v-else) 請先填寫表單讓系統生成您的專屬連結。
+
+block vue-config
+  script.
+    window.vueConfig.data.vcard = {
+      altText: 'Transit route',
+      fromName: 'Akihabara',
+      toName: 'Shinjuku',
+      totalTime: 'Total: 1 hour',
+      time1: '20:30',
+      station1: 'Akihabara',
+      walkLabel: 'Walk 4min',
+      time2: '20:34',
+      station2: 'Ochanomizu',
+      metroLabel: 'Metro 1hr',
+      time3: '20:40',
+      station3: 'Shinjuku',
+      template: '#{baseurl}cards/official-transit-1.txt',
+    }
+
+
