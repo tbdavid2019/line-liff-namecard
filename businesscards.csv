@@ -10,10 +10,10 @@ forms/facebook-post-link-1.html,Facebook Post Link,taichunmin,zh_TW,https://i.im
 forms/acnh-passport-1.html,動物森友會護照,taichunmin,zh_TW,https://i.imgur.com/rGRMSdy.png,「集合吧！動物森友會」的護照
 forms/acnh-postcard-1.html,動物森友會心意卡,taichunmin,zh_TW,https://i.imgur.com/gJASJdW.png,來自「集合吧！動物森友會」的心意卡。
 forms/chatbot-tw-1.html,Chatbot 台灣開發者,taichunmin,zh_TW,https://i.imgur.com/lEKHcUY.png,「Chatbot Developers Taiwan」的名片
-forms/announcer-announcement.html,公告樣板 (Announcement),taichunmin,zh_TW,https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png,活動公告專用樣板，包含圖片、時間、地點與詳細說明。
-forms/announcer-staff.html,名單樣板 (Staff List),taichunmin,zh_TW,https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_2_restaurant.png,適合展示團隊成員、營業時間或其他清單資訊。
-forms/announcer-card.html,卡片樣板 (Card),taichunmin,zh_TW,https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png,展示個人或商品卡片，包含圓形頭像、背景圖與按鈕。
-forms/announcer-news.html,新聞樣板 (News),taichunmin,zh_TW,https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png,類似新聞的圖文排版，適合分享文章或最新消息。
+forms/announcer-announcement.html,公告樣板 (Announcement),louis70109/Announcer,zh_TW,https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png,活動公告專用樣板，包含圖片、時間、地點與詳細說明。
+forms/announcer-staff.html,名單樣板 (Staff List),louis70109/Announcer,zh_TW,https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_2_restaurant.png,適合展示團隊成員、營業時間或其他清單資訊。
+forms/announcer-card.html,卡片樣板 (Card),louis70109/Announcer,zh_TW,https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png,展示個人或商品卡片，包含圓形頭像、背景圖與按鈕。
+forms/announcer-news.html,新聞樣板 (News),louis70109/Announcer,zh_TW,https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_1_cafe.png,類似新聞的圖文排版，適合分享文章或最新消息。
 forms/ticket-movie.html,票券樣板 (Ticket),LINE Official,zh_TW,https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_3_movie.png,模擬電影票券或活動入場券，包含 QR Code 區塊。
 forms/aitago-coupon-1.html,AiTAGO 折扣碼模板,aitago,zh_TW,https://i.ibb.co/xq0z9FwF/coupon.jpg,快速分享折扣碼的 Flex Message 模板
 forms/aitago-video-1.html,AiTAGO 影片訊息模板,aitago,zh_TW,https://i.ibb.co/q3NKmcRr/snorlax-psyduck.jpg,影片訊息模板，含影片與預覽圖
