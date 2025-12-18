@@ -1,6 +1,6 @@
 <%
 /* global vcard */
-const DEFAULT_LINK = 'https://taichunmin.idv.tw/liff-businesscard/'
+const DEFAULT_LINK = 'https://tbdavid2019.github.io/line-liff-namecard/'
 function gaScreenView (vcard) {
   const TEMPLATE_NAME = '多頁訊息1-2021/06/20'
   let hash = CryptoJS.HmacMD5(JSON.stringify(vcard), TEMPLATE_NAME)
