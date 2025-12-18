@@ -203,7 +203,8 @@ html
               let jsonStr = compiled(context)
 
               // Parse and stringify to format and validate JSON
-              const jsonObj = JSON5.parse(jsonStr)
+              let jsonObj = JSON5.parse(jsonStr)
+              if (jsonObj.type === 'flex' && jsonObj.contents) jsonObj = jsonObj.contents
               jsonStr = JSON.stringify(jsonObj, null, 2)
               
               // Remove non-standard whitespace
