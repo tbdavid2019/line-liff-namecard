@@ -1,0 +1,17 @@
+{
+  "altText": "Receipt",
+  "storeName": "Brown Store",
+  "address": "Miraina Tower, 4-1-6 Shinjuku, Tokyo",
+  "item1Name": "Energy Drink",
+  "item1Price": "$2.99",
+  "item2Name": "Chewing Gum",
+  "item2Price": "$0.99",
+  "item3Name": "Bottled Water",
+  "item3Price": "$3.33",
+  "itemsCount": "3",
+  "total": "$7.31",
+  "cash": "$8.0",
+  "change": "$0.69",
+  "paymentId": "#743289384279",
+  "template": "cards/official-receipt-1.txt"
+}

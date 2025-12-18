@@ -17,3 +17,8 @@ forms/announcer-news.html,新聞樣板 (News),louis70109/Announcer,zh_TW,https:/
 forms/ticket-movie.html,票券樣板 (Ticket),LINE Official,zh_TW,https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_3_movie.png,模擬電影票券或活動入場券，包含 QR Code 區塊。
 forms/aitago-coupon-1.html,AiTAGO 折扣碼模板,aitago,zh_TW,https://i.ibb.co/xq0z9FwF/coupon.jpg,快速分享折扣碼的 Flex Message 模板
 forms/aitago-video-1.html,AiTAGO 影片訊息模板,aitago,zh_TW,https://i.ibb.co/q3NKmcRr/snorlax-psyduck.jpg,影片訊息模板，含影片與預覽圖
+forms/official-receipt-1.html,LINE 官方收據樣板 (Receipt),LINE Official,zh_TW,https://raw.githubusercontent.com/jcyh0120/linebot-flex-message-template/master/official/Receipt.png,官方收據風格的 Flex Message。
+forms/official-transit-1.html,LINE 官方交通路線樣板 (Transit),LINE Official,zh_TW,https://raw.githubusercontent.com/jcyh0120/linebot-flex-message-template/master/official/Transit.png,官方交通路線風格的 Flex Message。
+forms/official-shopping-1.html,LINE 官方購物樣板 (Shopping),LINE Official,zh_TW,https://raw.githubusercontent.com/jcyh0120/linebot-flex-message-template/master/official/Shopping.png,官方商品/購物資訊 Flex Message。
+forms/official-menu-1.html,LINE 官方菜單樣板 (Menu),LINE Official,zh_TW,https://raw.githubusercontent.com/jcyh0120/linebot-flex-message-template/master/official/Menu.png,官方菜單/方案選單 Flex Message。
+forms/official-social-1.html,LINE 官方社群樣板 (Social),LINE Official,zh_TW,https://raw.githubusercontent.com/jcyh0120/linebot-flex-message-template/master/official/Social.png,官方社群導流 Flex Message。

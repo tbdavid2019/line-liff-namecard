@@ -1,0 +1,18 @@
+{
+  "altText": "Menu",
+  "heroImage": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_2_restaurant.png",
+  "heroLink": "https://linecorp.com",
+  "title": "Brown's Burger",
+  "item1Icon": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/restaurant_regular_32.png",
+  "item1Price": "$10.5",
+  "item1Info": "400kcl",
+  "item2Icon": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/restaurant_large_32.png",
+  "item2Price": "$15.5",
+  "item2Info": "550kcl",
+  "description": "Sauce, Onions, Pickles, Lettuce & Cheese",
+  "buttonLabel": "Add to Cart",
+  "buttonUrl": "https://linecorp.com",
+  "buttonColor": "#905c44",
+  "bodyLink": "https://linecorp.com",
+  "template": "cards/official-menu-1.txt"
+}

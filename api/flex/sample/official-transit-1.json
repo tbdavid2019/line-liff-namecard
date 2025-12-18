@@ -1,0 +1,15 @@
+{
+  "altText": "Transit route",
+  "fromName": "Akihabara",
+  "toName": "Shinjuku",
+  "totalTime": "Total: 1 hour",
+  "time1": "20:30",
+  "station1": "Akihabara",
+  "walkLabel": "Walk 4min",
+  "time2": "20:34",
+  "station2": "Ochanomizu",
+  "metroLabel": "Metro 1hr",
+  "time3": "20:40",
+  "station3": "Shinjuku",
+  "template": "cards/official-transit-1.txt"
+}

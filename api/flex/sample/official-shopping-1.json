@@ -1,0 +1,23 @@
+{
+  "altText": "Shopping",
+  "product1Image": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_5_carousel.png",
+  "product1Name": "Arm Chair, White",
+  "product1Price": "$49",
+  "product1PriceDecimal": ".99",
+  "product1Button1Label": "Add to Cart",
+  "product1Button1Url": "https://linecorp.com",
+  "product1Button2Label": "Add to wishlist",
+  "product1Button2Url": "https://linecorp.com",
+  "product2Image": "https://scdn.line-apps.com/n/channel_devcenter/img/fx/01_6_carousel.png",
+  "product2Name": "Metal Desk Lamp",
+  "product2Price": "$11",
+  "product2PriceDecimal": ".99",
+  "product2Status": "Temporarily out of stock",
+  "product2Button1Label": "Add to Cart",
+  "product2Button1Url": "https://linecorp.com",
+  "product2Button2Label": "Add to wish list",
+  "product2Button2Url": "https://linecorp.com",
+  "seeMoreLabel": "See more",
+  "seeMoreUrl": "https://linecorp.com",
+  "template": "cards/official-shopping-1.txt"
+}

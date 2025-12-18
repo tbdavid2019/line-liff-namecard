@@ -115,5 +115,50 @@
     "cover": "https://i.ibb.co/q3NKmcRr/snorlax-psyduck.jpg",
     "source": "api/flex/source/aitago-video-1.txt",
     "sample": "api/flex/sample/aitago-video-1.json"
+  },
+  {
+    "id": "official-receipt-1",
+    "title": "LINE 官方收據樣板 (Receipt)",
+    "description": "官方收據風格的 Flex Message。",
+    "template": "Flex Message",
+    "cover": "https://raw.githubusercontent.com/jcyh0120/linebot-flex-message-template/master/official/Receipt.png",
+    "source": "api/flex/source/official-receipt-1.txt",
+    "sample": "api/flex/sample/official-receipt-1.json"
+  },
+  {
+    "id": "official-transit-1",
+    "title": "LINE 官方交通路線樣板 (Transit)",
+    "description": "官方交通路線風格的 Flex Message。",
+    "template": "Flex Message",
+    "cover": "https://raw.githubusercontent.com/jcyh0120/linebot-flex-message-template/master/official/Transit.png",
+    "source": "api/flex/source/official-transit-1.txt",
+    "sample": "api/flex/sample/official-transit-1.json"
+  },
+  {
+    "id": "official-shopping-1",
+    "title": "LINE 官方購物樣板 (Shopping)",
+    "description": "官方商品/購物資訊 Flex Message。",
+    "template": "Flex Message",
+    "cover": "https://raw.githubusercontent.com/jcyh0120/linebot-flex-message-template/master/official/Shopping.png",
+    "source": "api/flex/source/official-shopping-1.txt",
+    "sample": "api/flex/sample/official-shopping-1.json"
+  },
+  {
+    "id": "official-menu-1",
+    "title": "LINE 官方菜單樣板 (Menu)",
+    "description": "官方菜單/方案選單 Flex Message。",
+    "template": "Flex Message",
+    "cover": "https://raw.githubusercontent.com/jcyh0120/linebot-flex-message-template/master/official/Menu.png",
+    "source": "api/flex/source/official-menu-1.txt",
+    "sample": "api/flex/sample/official-menu-1.json"
+  },
+  {
+    "id": "official-social-1",
+    "title": "LINE 官方社群樣板 (Social)",
+    "description": "官方社群導流 Flex Message。",
+    "template": "Flex Message",
+    "cover": "https://raw.githubusercontent.com/jcyh0120/linebot-flex-message-template/master/official/Social.png",
+    "source": "api/flex/source/official-social-1.txt",
+    "sample": "api/flex/sample/official-social-1.json"
   }
 ]
