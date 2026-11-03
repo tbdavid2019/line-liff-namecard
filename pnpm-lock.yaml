@@ -48,8 +48,8 @@ importers:
         specifier: ^1.4.2
         version: 1.4.2
       pug:
-        specifier: ^3.0.4
-        version: 3.0.4
+        specifier: 3.0.3
+        version: 3.0.3
       uglify-js:
         specifier: ^3.19.3
         version: 3.19.3
@@ -1354,8 +1354,8 @@ packages:
   pug-walk@2.0.0:
     resolution: {integrity: sha512-yYELe9Q5q9IQhuvqsZNwA5hfPkMJ8u92bQLIMcsMxf/VADjNtEYptU+inlufAFYcWdHlwNfZOEnOOQrZrcyJCQ==}
 
-  pug@3.0.4:
-    resolution: {integrity: sha512-kFfq5mMzrS7+wrl5pLJzZEzemx34OQ0w4SARfhy/3yxTlhbstsudDwJzhf1hP02yHzbjoVMSXUj/Sz6RNfMyXg==}
+  pug@3.0.3:
+    resolution: {integrity: sha512-uBi6kmc9f3SZ3PXxqcHiUZLmIXgfgWooKWXcwSGwQd2Zi5Rb0bT14+8CJjJgI8AB+nndLaNgHGrcc6bPIB665g==}
 
   punycode@2.3.1:
     resolution: {integrity: sha512-vYt7UD1U9Wg6138shLtLOvdAu+8DsC/ilFtEVHcH+wydcSpNE20AfSOduf6MkRFahL5FY7X1oU7nKVZFtfq8Fg==}
@@ -2989,7 +2989,7 @@ snapshots:
 
   pug-walk@2.0.0: {}
 
-  pug@3.0.4:
+  pug@3.0.3:
     dependencies:
       pug-code-gen: 3.0.4
       pug-filters: 4.0.0
