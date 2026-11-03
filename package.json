@@ -43,7 +43,8 @@
   "pnpm": {
     "overrides": {
       "jstransformer-scss": "^2.0.0",
-      "sass": "^1.96.0"
+      "sass": "^1.96.0",
+      "minimatch": "11.0.1"
     }
   }
 }
