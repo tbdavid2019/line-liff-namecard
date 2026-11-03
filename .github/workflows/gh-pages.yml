@@ -34,7 +34,7 @@ jobs:
           cache: pnpm
       - name: 編譯網頁
         env:
-          BASEURL: ${{ secrets.BASEURL }}
+          BASEURL: ${{ secrets.BASEURL || 'https://tbdavid2019.github.io/line-liff-namecard/' }}
           LIFFID_FULL: ${{ secrets.LIFFID_FULL }}
           LIFFID_SHARE_CSV: ${{ secrets.LIFFID_SHARE_CSV }}
           LIFFID_SHARE: ${{ secrets.LIFFID_SHARE }}
